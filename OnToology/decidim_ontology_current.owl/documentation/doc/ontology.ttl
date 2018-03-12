@@ -1,0 +1,1163 @@
+@prefix : <http://ontology.decidim.org/decidim_roadmap/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ontology.decidim.org/decidim_roadmap/> .
+
+<http://ontology.decidim.org/decidim_roadmap/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://ontology.decidim.org/decidim_roadmap/acts_on
+:acts_on rdf:type owl:ObjectProperty ;
+         owl:inverseOf :has_actor ;
+         rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#Agent> ;
+         rdfs:comment """General property that defines the relationship between an Agent and an entity on which it perform some action.
+
+Inverse property of has_actor and it has domain Agent."""@en ;
+         rdfs:label "acts on"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/administrator_of
+:administrator_of rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :acts_on ;
+                  owl:inverseOf :has_administrator ;
+                  rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+                  rdfs:range :ParticipationArtifact ;
+                  rdfs:label "administrator of"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/attendee_of
+:attendee_of rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :acts_on ;
+             owl:inverseOf :has_attendee ;
+             rdfs:domain :RegisteredPerson ;
+             rdfs:range :Meeting ;
+             rdfs:label "attendee of"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/belong_to
+:belong_to rdf:type owl:ObjectProperty ;
+           owl:inverseOf :includes ;
+           rdfs:comment """This general property links an entity to another entity it belongs to.
+
+It is inverse property of property includes."""@en ;
+           rdfs:label "belongs to"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/category_of
+:category_of rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :specifies ;
+             owl:inverseOf :has_category ;
+             rdfs:domain :Category ;
+             rdfs:range :ParticipationItem ;
+             rdfs:label "category of"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/collaborator_of
+:collaborator_of rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :acts_on ;
+                 owl:inverseOf :has_collaborator ;
+                 rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+                 rdfs:range <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+                 rdfs:label "collaborator of"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/comment_voted_by
+:comment_voted_by rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :has_actor ;
+                  owl:inverseOf :votes_comment ;
+                  rdfs:domain :Comment ;
+                  rdfs:range <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+                  rdfs:label "comment voted by"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/configurator_of
+:configurator_of rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :belong_to ;
+                 owl:inverseOf :has_configurator ;
+                 rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Configurator ;
+                 rdfs:range :ParticipationArtifact ;
+                 rdfs:label "configurator of"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/container_of
+:container_of rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :includes ;
+              owl:inverseOf :has_container ;
+              rdfs:domain :Container ;
+              rdfs:range :ParticipationItem ;
+              rdfs:label "container of"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/creator_of
+:creator_of rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :acts_on ;
+            owl:inverseOf :has_creator ;
+            rdf:type owl:InverseFunctionalProperty ;
+            rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+            rdfs:range :ParticipationItem ;
+            rdfs:label "creator of"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/derives
+:derives rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :referred_by ;
+         owl:inverseOf :derives_from ;
+         rdfs:domain :Result ;
+         rdfs:range :Project ;
+         rdfs:label "derives"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/derives_from
+:derives_from rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :refers_to ;
+              rdfs:domain :Project ;
+              rdfs:range :Result ;
+              rdfs:label "derived from"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/endorsed_by
+:endorsed_by rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :has_actor ;
+             owl:inverseOf :endorser_of ;
+             rdfs:domain :Proposal ;
+             rdfs:range <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> ;
+             rdfs:label "endorsed by"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/endorser_of
+:endorser_of rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :acts_on ;
+             rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> ;
+             rdfs:range :Proposal ;
+             rdfs:label "endorser of"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/first_comment_of
+:first_comment_of rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :belong_to ;
+                  owl:inverseOf :has_first_comment ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain :FirstLevelComment ;
+                  rdfs:range :Thread ;
+                  rdfs:comment "By opening a discussion about an Item, a FirstLevelComment starts a Thread. This property associates a FirstLevelComment to the corresponding Thread."@en ;
+                  rdfs:label "first comment of"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/followed_by
+:followed_by rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :has_actor ;
+             owl:inverseOf :follower_of ;
+             rdfs:domain :ParticipationItem ;
+             rdfs:range <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+             rdfs:label "followed by"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/follower_of
+:follower_of rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :acts_on ;
+             rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+             rdfs:range :ParticipationItem ;
+             rdfs:comment "This property associates a RegisteredParticipant to an Item they have subscribed to, in order to receive notifications and updates about it."@en ;
+             rdfs:label "follower of"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/functionality_of
+:functionality_of rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :belong_to ;
+                  owl:inverseOf :has_functionality ;
+                  rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> ;
+                  rdfs:range :ParticipationFunctionality ;
+                  rdfs:comment """Indicates that a ParticipationSpace includes a ParticipationFunctionality. 
+Each ParticipationSpace can include more instances of the same kind of functionality; for example, a Process may include various Debates and Pages."""@en ;
+                  rdfs:label "functionality of"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/granted_by
+:granted_by rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :has_actor ;
+            owl:inverseOf :grants ;
+            rdfs:domain :Role ;
+            rdfs:range <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+            rdfs:label "granted by"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/grants
+:grants rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf :acts_on ;
+        rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+        rdfs:range :Role ;
+        rdfs:label "grants"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_actor
+:has_actor rdf:type owl:ObjectProperty ;
+           rdfs:range <http://ontology.decidim.org/decidim_roadmap/#Agent> ;
+           rdfs:comment """general property that defines the relation between an entity and an Agent that performs some action on it.
+
+It is inverse property of acts_on, and it has range Agent."""@en ;
+           rdfs:label "has actor"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_administrator
+:has_administrator rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :has_actor ;
+                   rdfs:domain :ParticipationArtifact ;
+                   rdfs:range <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+                   rdfs:label "has administrator"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_attendee
+:has_attendee rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :has_actor ;
+              rdfs:domain :Meeting ;
+              rdfs:range :RegisteredPerson ;
+              rdfs:label "has attendee"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_category
+:has_category rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :specified_by ;
+              rdfs:domain :ParticipationItem ;
+              rdfs:range :Category ;
+              rdfs:label "has category"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_collaborator
+:has_collaborator rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :has_actor ;
+                  rdfs:domain :ParticipationArtifact ;
+                  rdfs:range <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+                  rdfs:label "has collaborator"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_configurator
+:has_configurator rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :includes ;
+                  rdf:type owl:InverseFunctionalProperty ;
+                  rdfs:domain :ParticipationArtifact ;
+                  rdfs:range :Configurator ;
+                  rdfs:label "has configurator"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_container
+:has_container rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :belong_to ;
+               rdfs:domain :ParticipationItem ;
+               rdfs:range :Container ;
+               rdfs:label "has container"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_creator
+:has_creator rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :has_actor ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain :ParticipationItem ;
+             rdfs:range <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+             rdfs:comment "This property links an AuthoredItem to its creator."@en ;
+             rdfs:label "has creator"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_first_comment
+:has_first_comment rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :includes ;
+                   rdf:type owl:FunctionalProperty ;
+                   rdfs:domain :Thread ;
+                   rdfs:range :FirstLevelComment ;
+                   rdfs:comment "This property associates a Thread with the FirstLevelComment that opens it."@en ;
+                   rdfs:label "has first comment"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_functionality
+:has_functionality rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :includes ;
+                   rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> ;
+                   rdfs:range :ParticipationFunctionality ;
+                   rdfs:label "has functionality"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_moderator
+:has_moderator rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :has_actor ;
+               owl:inverseOf :moderator_of ;
+               rdfs:domain :ParticipationArtifact ;
+               rdfs:range <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+               rdfs:label "has moderator"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_phase
+:has_phase rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :includes ;
+           owl:inverseOf :phase_of ;
+           rdf:type owl:InverseFunctionalProperty ;
+           rdfs:domain :Process ;
+           rdfs:range :Phase ;
+           rdfs:label "has phase"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_platform
+:has_platform rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :belong_to ;
+              owl:inverseOf :platform_of ;
+              rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> ;
+              rdfs:range :ParticipationPlatform ;
+              rdfs:label "has platform"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_promoter
+:has_promoter rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :has_actor ;
+              owl:inverseOf :promoter_of ;
+              rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> ;
+              rdfs:range :Group ;
+              rdfs:label "has promoter"@en ,
+                         "promoted by"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_reply
+:has_reply rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :referred_by ;
+           owl:inverseOf :reply_of ;
+           rdfs:domain :ParticipationItem ;
+           rdfs:range :Comment ;
+           rdfs:comment "Points to an Comment that is a reply or response to this Item."@en ;
+           rdfs:label "has reply"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_result
+:has_result rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :referred_by ;
+            owl:inverseOf :result_of ;
+            rdfs:domain :Proposal ;
+            rdfs:range :Result ;
+            rdfs:label "has result"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_role
+:has_role rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :specified_by ;
+          owl:inverseOf :role_of ;
+          rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+          rdfs:range :Role ;
+          rdfs:label "has role"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_role_scope
+:has_role_scope rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :specified_by ;
+                owl:inverseOf :role_scope_of ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain :Role ;
+                rdfs:range :ParticipationArtifact ;
+                rdfs:label "has role scope"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/has_scope
+:has_scope rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :specified_by ;
+           owl:inverseOf :scope_of ;
+           rdfs:range :Scope ;
+           rdfs:label "has scope"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/includes
+:includes rdf:type owl:ObjectProperty ;
+          rdfs:comment """This general property links an entity to another entity belonging to it.
+
+It is inverse property of belongs_to."""@en ;
+          rdfs:label "includes"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/mentioned_by
+:mentioned_by rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :referred_by ;
+              owl:inverseOf :mentions ;
+              rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+              rdfs:range :Comment ;
+              rdfs:label "mentioned by"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/mentions
+:mentions rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :refers_to ;
+          rdfs:domain :Comment ;
+          rdfs:range <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+          rdfs:label "mentions"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/moderator_of
+:moderator_of rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :acts_on ;
+              rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+              rdfs:range :ParticipationArtifact ;
+              rdfs:label "moderator of"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/phase_of
+:phase_of rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :belong_to ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Phase ;
+          rdfs:range :Process ;
+          rdfs:label "phase of"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/platform_of
+:platform_of rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :includes ;
+             rdfs:domain :ParticipationPlatform ;
+             rdfs:range <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> ;
+             rdfs:label "platform of"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/promoter_of
+:promoter_of rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :acts_on ;
+             rdfs:domain :Group ;
+             rdfs:range <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> ;
+             rdfs:comment ""^^xsd:string ;
+             rdfs:label "promoter of"@en ,
+                        "promotes"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/referenced_by
+:referenced_by rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :referred_by ;
+               owl:inverseOf :references ;
+               rdfs:domain :ParticipationItem ;
+               rdfs:range :ParticipationItem ;
+               rdfs:label "referenced by"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/references
+:references rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :refers_to ;
+            rdfs:domain :ParticipationItem ;
+            rdfs:range :ParticipationItem ;
+            rdfs:label "references"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/referred_by
+:referred_by rdf:type owl:ObjectProperty ;
+             owl:inverseOf :refers_to ;
+             rdfs:range :ParticipationItem ;
+             rdfs:comment """This general property indicates that an entity points to an Item that refers to it in some way. This may be because the entity is mentioned, references, amended or replied to by the Item. Specific subproperties help distinguish these different cases.
+
+It is inverse property of refers_to."""@en ;
+             rdfs:label "referred by"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/refers_to
+:refers_to rdf:type owl:ObjectProperty ;
+           rdfs:domain :ParticipationItem ;
+           rdfs:comment """This general property indicates that an Item points to an entity is referred to in some way. This may be because the Item mentions, references, amends or replies to it. Specific subproperties help distinguish these different cases.
+
+It is inverse property of referred_by."""@en ;
+           rdfs:label "refers to"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/related_to
+:related_to rdf:type owl:ObjectProperty ,
+                     owl:SymmetricProperty ;
+            rdfs:comment "Symmetric object property indicating that two individual are related to each other."@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/reply_of
+:reply_of rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :refers_to ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Comment ;
+          rdfs:range :ParticipationItem ;
+          rdfs:comment "Points to an Item which this Comment replies to."@en ;
+          rdfs:label "reply of"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/reported_by
+:reported_by rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :has_actor ;
+             owl:inverseOf :reports ;
+             rdfs:domain :ParticipationItem ;
+             rdfs:range <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+             rdfs:label "reported by"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/reports
+:reports rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :acts_on ;
+         rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+         rdfs:range :ParticipationItem ;
+         rdfs:label "reports"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/result_of
+:result_of rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :refers_to ;
+           rdfs:domain :Result ;
+           rdfs:range :Proposal ;
+           rdfs:label "result of"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/role_of
+:role_of rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :specifies ;
+         rdfs:domain :Role ;
+         rdfs:range <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+         rdfs:label "role of"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/role_scope_of
+:role_scope_of rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :specifies ;
+               rdfs:domain :ParticipationArtifact ;
+               rdfs:range :Role ;
+               rdfs:label "role scope of"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/scope_of
+:scope_of rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :specifies ;
+          rdfs:label "scope of"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/specified_by
+:specified_by rdf:type owl:ObjectProperty ;
+              owl:inverseOf :specifies ;
+              rdfs:comment "General property that indicates that some aspect or attribute of the entity is specified by an other one."@en ;
+              rdfs:label "specified by"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/specifies
+:specifies rdf:type owl:ObjectProperty ;
+           rdfs:comment """General property that indicates that an entity specifies an aspect or attribute of another entity, such as its Scope, Category or Role.
+
+It is inverse property of specified_by."""@en ;
+           rdfs:label "specifies"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/supported_by
+:supported_by rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :has_actor ;
+              owl:inverseOf :supporter_of ;
+              rdfs:domain :Proposal ;
+              rdfs:range :RegisteredPerson ;
+              rdfs:label "supported by"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/supporter_of
+:supporter_of rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :acts_on ;
+              rdfs:domain :VerifiedPerson ;
+              rdfs:range :Proposal ;
+              rdfs:label "supporter of"@en ,
+                         "supports"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/votes_comment
+:votes_comment rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :acts_on ;
+               rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+               rdfs:range :Comment ;
+               rdfs:label "votes comment"^^xsd:string .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/withdrawn_by
+:withdrawn_by rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :has_actor ;
+              rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+              rdfs:range :Proposal ;
+              rdfs:label "withdrawn by"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ontology.decidim.org/decidim_roadmap/AccountabilityContainer
+:AccountabilityContainer rdf:type owl:Class ;
+                         rdfs:subClassOf :Container ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :container_of ;
+                                           owl:someValuesFrom :Result
+                                         ] ;
+                         rdfs:comment """This functionality allows participants to monitor the results of a participation space, and the progress of derived projects.
+
+It is a ParticipationFunctionality of kind Container, and includes Items of kind Result, vinculated to the corresponding accepted Proposals and to projects deriving from them."""@en ;
+                         rdfs:label "Accountability container"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Administrator
+:Administrator rdf:type owl:Class ;
+               rdfs:subClassOf :Moderator ;
+               rdfs:comment "A registered participant who has the role of Administrator on a ParticipationArtifact can configure and manage it, and can grant other RegisteredParticipants administration permissions of Collaborator, Moderator or Administrator in the same ParticipationArtifact or on a ParticipationArtifact contained in it."@en ;
+               rdfs:label "Administrator"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Attribute
+:Attribute rdf:type owl:Class ;
+           rdfs:comment "General class for entities that represent an attribute of other entities, such as their Scope or Category."@en ;
+           rdfs:label "Attribute"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/AuthoredItem
+:AuthoredItem rdf:type owl:Class ;
+              rdfs:subClassOf :ParticipationItem ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :has_creator ;
+                                owl:someValuesFrom <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant>
+                              ] ;
+              rdfs:comment "This class represents Items that have an author. While some content in the Platform and ParticipationSpaces is created by the Adinistrators, AuthoredItems have a creator that can typically be any RegisteredParticipant."@en ;
+              rdfs:label "Authored item"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Blog_post
+:Blog_post rdf:type owl:Class ;
+           rdfs:subClassOf :ParticipationItem ;
+           rdfs:comment "A BlogPost is a piece of content that is published within a Blog."@en ;
+           rdfs:label "Blog post"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/BudgetedProject
+:BudgetedProject rdf:type owl:Class ;
+                 rdfs:subClassOf :AuthoredItem ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :has_container ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :ParticipativeBudget
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :has_creator ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant>
+                                 ] ;
+                 rdfs:comment "A kind of proposal, that has a budget associated with it."@en ;
+                 rdfs:label "Budgeted project"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Category
+:Category rdf:type owl:Class ;
+          rdfs:subClassOf :Attribute ;
+          rdfs:comment "Categories are used to group items according to some criteria, typically the topic. They help participants browse and search information in a Participation space."@en ;
+          rdfs:label "Category"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Collaborator
+:Collaborator rdf:type owl:Class ;
+              rdfs:subClassOf :Role ;
+              rdfs:comment "A RegisteredParticipant having the Role of Collaborator in a given role scope can access the same information as an Administrator, including configuration panels, but cannot modify it."@en ;
+              rdfs:label "Collaborator"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Comment
+:Comment rdf:type owl:Class ;
+         rdfs:subClassOf :AuthoredItem ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :has_creator ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant>
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :reply_of ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :ParticipationItem
+                         ] ;
+         rdfs:comment """Comments are ParticipationItems authored by RegisteredParticipants, that can be associated with different ParticipationFunctionalities and Items. 
+
+A Comment can be referred to another comment (NestedComment) or to some other ParticipationItem (FirstLevelComment)."""@en ;
+         rdfs:label "Comment"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Configurator
+:Configurator rdf:type owl:Class ;
+              rdfs:subClassOf :ParticipationArtifact ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :configurator_of ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :ParticipationArtifact
+                              ] ;
+              rdfs:comment """Administration panel associated to a ParticipationArtifact, that allows Administrators to configure it. Collaborators of the artifat can access the configurator but not modify it; moderators can also access the configurator, and additionally they can manage certain aspects such as accepting or rejecting proposals.
+A Configurator is linked to the ParticipationArtifacts it allows to configure through the property configurator_of."""@en ;
+              rdfs:label "Configurator"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Container
+:Container rdf:type owl:Class ;
+           rdfs:subClassOf :ParticipationFunctionality ;
+           rdfs:comment """Functionalities of this kind contain ParticipationItems, to which they are linked to the property container_of. 
+
+Different kinds of ParticipationContainers contain different kinds of ParticipationItems: for example, a Debate contains items of ind Thread and Comment, a ProposalIncubator contains Proposals, a ParticipativeBudget contains BudgetedProposals and a MeetingCalendar contains Meetings."""@en ;
+           rdfs:label "Participation container"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Debate
+:Debate rdf:type owl:Class ;
+        rdfs:subClassOf :Container ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :container_of ;
+                          owl:someValuesFrom :Blog_post
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :container_of ;
+                          owl:someValuesFrom :Thread
+                        ] ;
+        rdfs:comment """This functionality allows for the creation of debates about specific questions, defined by the Administrators or by RegisteredParticipants.
+
+A Debate is a ParticipationFunctionality of kind Container, that includes Items of kind Comment, and the corresponding Threads."""@en ;
+        rdfs:label "Debate"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/FirstLevelComment
+:FirstLevelComment rdf:type owl:Class ;
+                   rdfs:subClassOf :Comment ;
+                   owl:disjointWith :NestedComment ;
+                   rdfs:comment "A comment referred to some ParticipationItem, which is not another comment."@en ;
+                   rdfs:label "First level comment"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Group
+:Group rdf:type owl:Class ;
+       rdfs:subClassOf :Organization ,
+                       <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+       rdfs:comment "A collective account corresponding to a group of registered participants."@en ;
+       rdfs:label "Group"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/ManagedAccount
+:ManagedAccount rdf:type owl:Class ;
+                rdfs:subClassOf :VerifiedPerson ;
+                rdfs:comment "A ManagedAccount is an account managed on behalf of another Person, that for some reason is not able to manage it by themselves."@en ;
+                rdfs:label "Managed account"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Meeting
+:Meeting rdf:type owl:Class ;
+         rdfs:subClassOf :ParticipationItem ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :has_attendee ;
+                           owl:someValuesFrom <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant>
+                         ] ;
+         rdfs:comment """A Meeting is a physical gathering in which RegisteredParticipants can meet presentially to discuss about some issue and create Proposals. 
+
+A Meeting is linked to the participants attending it through the property has_attendee.
+
+A Meeting can be included in a Workshop or in an EventCalendar associated to some ParticipationSpace."""@en ;
+         rdfs:label "Meeting"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/MeetingCalendar
+:MeetingCalendar rdf:type owl:Class ;
+                 rdfs:subClassOf :Container ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :container_of ;
+                                   owl:someValuesFrom :Meeting
+                                 ] ;
+                 rdfs:comment """A MeetingCalendar is a group of meetings associated to a given ParticipationSpace. 
+
+Like a Workshop, it is a ParticipationFunctionality of kind Container, that includes Item of kind Meeting; however, in this case events may typically span over a long period of time, be located in different places and not be related to each other."""@en ;
+                 rdfs:label "Meeting calendar"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Moderator
+:Moderator rdf:type owl:Class ;
+           rdfs:subClassOf :Collaborator ;
+           rdfs:comment "The role of Moderator attributes to a RegisteredParticipant the same rights as a Collaborator for accessing information, plus the possibility of managing ParticipationArtifacts within the role's scope (for example, they can assign a status to a Proposal, and provide an official response)."@en ;
+           rdfs:label "Moderator"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/NestedComment
+:NestedComment rdf:type owl:Class ;
+               rdfs:subClassOf :Comment ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :reply_of ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Comment
+                               ] ;
+               rdfs:comment "A comment that replies to another comment."@en ;
+               rdfs:label "Nested comment"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Newsletter
+:Newsletter rdf:type owl:Class ;
+            rdfs:subClassOf :ParticipationFunctionality ;
+            rdfs:comment "A Newsletter allows to broadcast messages to all the RegisteredParticipants associated to a ParticipationPlatform or to a specific ParticipationSpace."@en ;
+            rdfs:label "Newsletter"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Organization
+:Organization rdf:type owl:Class ;
+              rdfs:subClassOf <http://ontology.decidim.org/decidim_roadmap/#Agent> ;
+              owl:disjointWith :Person ;
+              rdfs:comment "An organized group of people with a collective purpose. Specific subclasses represent the case of groups of registered participants (Group), and the organization promoting a ParticipationPlatform or a ParticipationSpace (Sovereign organization)."@en ;
+              rdfs:label "Organization"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Page
+:Page rdf:type owl:Class ;
+      rdfs:subClassOf :ParticipationFunctionality ;
+      rdfs:comment "This ParticipationFunctionality allows to create informative pages with enriched text, images or videos."@en ;
+      rdfs:label "Page"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact
+:ParticipationArtifact rdf:type owl:Class ;
+                       rdfs:comment "General class including the various elements that allow democratic participation in Decidim: ParticipationPlatforms, ParticipationSpaces (such as Participation processes or Assemblies), ParticipationFunctionalities (such as Debates, Surveys or Votations), and ParticipationItems (such as individual proposals, meetings or comments)."@en ;
+                       rdfs:label "Participation artifact"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality
+:ParticipationFunctionality rdf:type owl:Class ;
+                            rdfs:subClassOf :ParticipationArtifact ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :functionality_of ;
+                                              owl:someValuesFrom <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace>
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :has_configurator ;
+                                              owl:someValuesFrom :Configurator
+                                            ] ;
+                            rdfs:comment """This class includes the different functionalitites that can be added to a ParticipationSpace by RegisteredParticipants having administrative role to configure it. 
+
+Each ParticipationFunctionality has to be linked to at least one participationSpace it belongs to, through the property functionality_of.
+Furthermore, a ParticipationFunctionality needs to have a Configurator that allows its configuration by participants having the permissions to do so.
+
+Some functionalitites represent one single element that is added to the ParticipationSpace, such as a Page, a Votation or a Survey, while other functionalities are elements that contain participationItems, such as Proposals, BudgetedProposals, Meetings or Comments; such functionalitties that contain ParticipationItems are defined as ParticipationContainers.
+
+While some functionalities are general and can belong to any kind of ParticipationSpace, such as a Page, a Blog or a Debate, other are specific to a certain kind of participationSpace. E.g., a WorkingGroup can only belong to an Assembly. In the latter case, the range of the property functionality_of for that particular ParticipationFunctionality is restrictetd to the kind of space it can belong to."""@en ;
+                            rdfs:label "Participation functionality"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/ParticipationItem
+:ParticipationItem rdf:type owl:Class ;
+                   rdfs:subClassOf :ParticipationArtifact ;
+                   rdfs:comment """This general class represents all individual items within a participation space such as Proposals, Comments, meetings, Blog posts.
+
+Items are typically contained in some ParticipationContainer associated with a ParticipationSpace, and different kinds of Items are typically contained in different kinds of containers. For example, Bog posts in Blogs, Proposals in ProposalContainers, Meetings in Workshops or MeetingCalendars, and so on."""@en ;
+                   rdfs:label "Participation item"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform
+:ParticipationPlatform rdf:type owl:Class ;
+                       rdfs:subClassOf :ParticipationArtifact ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :has_promoter ;
+                                         owl:someValuesFrom :SovereignOrganization
+                                       ] ;
+                       rdfs:comment """This class represent instances of a participation platform. 
+
+It can include different kinds of ParticipationSpaces, such as Assemblies, Processes, Consultations or Initiatives; all ParticipationArtifacts ultimately relate to some platform."""@en ;
+                       rdfs:label "Participation platform"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/ParticipativeBudget
+:ParticipativeBudget rdf:type owl:Class ;
+                     rdfs:subClassOf :Container ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :container_of ;
+                                       owl:someValuesFrom :BudgetedProject
+                                     ] ;
+                     rdfs:comment """This component allows participants to collectively define a budget by prioritizing budgeted projects.
+
+It is a ParticipationFunctionality of kind Container, and includes Items of kind BudgetedProposal."""@en ;
+                     rdfs:label "Participative budget"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf <http://ontology.decidim.org/decidim_roadmap/#Agent> ;
+        rdfs:comment "General class that represents any person as an individual agent, opposed to collective agents (Organizations)."@en ;
+        rdfs:label "Person"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Phase
+:Phase rdf:type owl:Class ;
+       rdfs:subClassOf :ParticipationFunctionality ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :phase_of ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Process
+                       ] ;
+       rdfs:comment "This functionality allows the administrators of a Process to design and different phases in which the process is divided, with a start and an end date, and with different actions and permissions for each phase."@en ;
+       rdfs:label "Phase"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Process
+:Process rdf:type owl:Class ;
+         rdfs:subClassOf <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :has_promoter ;
+                           owl:someValuesFrom :SovereignOrganization
+                         ] ;
+         owl:disjointWith :ProcessGroup ;
+         rdfs:comment """A Process is a ParticipationSpace that allows participants to interact with one another in different phases in a collective decision making effort.
+
+A Process is promoted by a SovereignOrganization and can contain in different phases different kinds of functionalities, such as Debates, MeetingCalendars, ParticipatoryBudgets or Accountability."""@en ;
+         rdfs:label "Process"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/ProcessGroup
+:ProcessGroup rdf:type owl:Class ;
+              rdfs:subClassOf <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :has_promoter ;
+                                owl:someValuesFrom :SovereignOrganization
+                              ] ;
+              rdfs:comment "A GroupOfProcesses groups together different processes promoted by the same SovereignOrganization."@en ;
+              rdfs:label "Process group"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Project
+:Project rdf:type owl:Class ;
+         rdfs:subClassOf :ParticipationItem ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :derives_from ;
+                           owl:someValuesFrom :Result
+                         ] ;
+         rdfs:comment """A Project is an Item that represents the implementation of some Result, in turn associated with some accepted Proposal.
+
+It is connected to some Result through the property derived_from, and Participants can monitor its state of execution."""@en ;
+         rdfs:label "Project"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Promoter
+:Promoter rdf:type owl:Class ;
+          rdfs:subClassOf :Role ;
+          rdfs:comment "A RegisteredParticipant can have the role of Promoter with respect to a ParticipationArtifact they promote. For example, a SovereignOrganization can be the promoter of a ParticipationPlatform or ParticipationSpace, and a RegisteredParticipant can be the Promoter of an Initiative."@en ;
+          rdfs:label "Promoter"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Proposal
+:Proposal rdf:type owl:Class ;
+          rdfs:subClassOf :AuthoredItem ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_container ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :ProposalContainer
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :has_creator ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant>
+                          ] ;
+          rdfs:comment "Proposals are ParticipationItems that can be authored by different kinds of RegisteredParticipants, and can receive support from other VerifiedParticipants. Proposals are moderated and can be rejected, or accepted and turned into Results and Projects."@en ;
+          rdfs:label "Proposal"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/ProposalContainer
+:ProposalContainer rdf:type owl:Class ;
+                   rdfs:subClassOf :Container ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :container_of ;
+                                     owl:someValuesFrom :Proposal
+                                   ] ;
+                   rdfs:comment """This functionality allows RegisteredParticipants to create Proposals and comment and support proposals created by others.
+
+It is a ParticipationFunctionality of kind Container, and includes Items of kind Proposal."""@en ;
+                   rdfs:label "Proposal container"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/RegisteredPerson
+:RegisteredPerson rdf:type owl:Class ;
+                  rdfs:subClassOf :Person ,
+                                  <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+                  rdfs:comment "A RegisteredParticipant who is an individual Person, as opposed to collective accounts representing Organizations or Groups of participants."@en ;
+                  rdfs:label "Registered person"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Result
+:Result rdf:type owl:Class ;
+        rdfs:subClassOf :ParticipationItem ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :result_of ;
+                          owl:someValuesFrom :Proposal
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :has_container ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :AccountabilityContainer
+                        ] ;
+        rdfs:comment """This kind of ParticipationItem allows Participants to trace and monitor the outcomes of a participative process. 
+
+A Result belongs to an AccountabilityContainer, within a ParticipationSpace.
+
+Each Result is associated to one or more accepted Proposals, and to one or more Projects derived from it. Results are the conjunction between Proposals and Projects that implement them."""@en ;
+        rdfs:label "Result"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Role
+:Role rdf:type owl:Class ;
+      rdfs:subClassOf :Attribute ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :has_scope ;
+                        owl:someValuesFrom :ParticipationArtifact
+                      ] ;
+      rdfs:comment "Abstract class to represent that a given participant has a certain function in the scope of some ParticipationArtifact."@en ;
+      rdfs:label "Role"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Scope
+:Scope rdf:type owl:Class ;
+       rdfs:subClassOf :Attribute ;
+       rdfs:comment "A scope is an Attribute that delimits a ParticipationSpace within a certain geographical area (TerritorialScope subclass) or topic/sector (SectorialScope)."@en ;
+       rdfs:label "Scope"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/SectorialScope
+:SectorialScope rdf:type owl:Class ;
+                rdfs:subClassOf :Scope ;
+                owl:disjointWith :TerritorialScope ;
+                rdfs:comment "A Scope that delimits a ParticipationProcess within a certain topic or sector."@en ;
+                rdfs:label "Sectorial scope"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/SovereignOrganization
+:SovereignOrganization rdf:type owl:Class ;
+                       rdfs:subClassOf :Organization ;
+                       rdfs:comment "A SovereignOrganization is an Organization able to take decision and make them effective, that promotes a ParticipationPlatform or a ParticipationSpace to involve participants in collective decision making."@en ;
+                       rdfs:label "Sovereign organization"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Supporter
+:Supporter rdf:type owl:Class ;
+           rdfs:subClassOf :Role ;
+           rdfs:comment "A registered Participant can have the Role of Supporter with respect to some ParticipationItem they support, such as a Proposal or a BudgetedProposal."@en ;
+           rdfs:label "Supporter"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Survey
+:Survey rdf:type owl:Class ;
+        rdfs:subClassOf :ParticipationFunctionality ;
+        rdfs:comment "This functionality allws Administrators to design, create and configure surveys associated to some ParticipationSpace, with multiple questions that can be answered by RegisteredParticipants."@en ;
+        rdfs:label "Survey"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/SysAdmin
+:SysAdmin rdf:type owl:Class ;
+          rdfs:subClassOf :Administrator ;
+          rdfs:comment "A RegisteredParticipant having the role of SysAdmin (Sytem administrator) has rights to access and modify any aspect of the platform. This includes granting any administration role to other RegisteredParticipants."@en ;
+          rdfs:label "Sys admin"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/TerritorialScope
+:TerritorialScope rdf:type owl:Class ;
+                  rdfs:subClassOf :Scope ;
+                  rdfs:comment "A Scope that delimits a ParticipationProcess within a certain geographical area, such as a neighborhood, district, city, province, region or country."@en ;
+                  rdfs:label "Territorial scope"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Thread
+:Thread rdf:type owl:Class ;
+        rdfs:subClassOf :ParticipationItem ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :has_first_comment ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :FirstLevelComment
+                        ] ;
+        rdfs:comment "A Thread is ParticipationItem that is composed of different comments, and is started by a FirstLevelComment that opens the conversation."@en ;
+        rdfs:label "Thread"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/VerifiedGroup
+:VerifiedGroup rdf:type owl:Class ;
+               rdfs:subClassOf :Group ,
+                               <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> ;
+               rdfs:comment "A Group of Participants whose account has been verified to correspond to the Organization or collective entity it represents."@en ;
+               rdfs:label "Verified group"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/VerifiedPerson
+:VerifiedPerson rdf:type owl:Class ;
+                rdfs:subClassOf :RegisteredPerson ,
+                                <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> ;
+                rdfs:comment """A RegisteredPerson whose identity has been verified to correspond to a citizen or Organization member with right to vote. Although the identity of a VerifiedParticipant has been verified, it is in general not disclosed; the OfficialAccount subclass represents VerifiedParticipants whose real (verified) identity is publicly disclosed.
+
+Some actions may only be performed by VerifiedPersons, such as supporting a Proposal."""^^xsd:string ;
+                rdfs:label "Verified person"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/VisitingParticipant
+:VisitingParticipant rdf:type owl:Class ;
+                     rdfs:subClassOf <http://ontology.decidim.org/decidim_roadmap/#Participant> ;
+                     rdfs:comment """Any participant who visits the platform without logging into a registered account.
+
+Visiting participants can only access content, but cannot modify it or perform actions."""@en ;
+                     rdfs:label "Visiting participant"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/Votation
+:Votation rdf:type owl:Class ;
+          rdfs:subClassOf :ParticipationFunctionality ;
+          rdfs:comment """This functionality represents a votation system associated to a ParticipationSpace.
+
+Different votation systems are possible and can be configured by the Administrators."""@en ;
+          rdfs:label "Votation"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/#Agent
+<http://ontology.decidim.org/decidim_roadmap/#Agent> rdf:type owl:Class ;
+                                                     rdfs:comment "An entity that can perform actions. It can be an individual (Person) or a collective (Organization)."@en ;
+                                                     rdfs:label "Agent"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/#Participant
+<http://ontology.decidim.org/decidim_roadmap/#Participant> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://ontology.decidim.org/decidim_roadmap/#Agent> ;
+                                                           rdfs:comment "General class that includes any individual or collective entity participating in a participation space"@en ;
+                                                           rdfs:label "Participant"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace
+<http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> rdf:type owl:Class ;
+                                                                  rdfs:subClassOf :ParticipationArtifact ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :has_configurator ;
+                                                                                    owl:someValuesFrom :Configurator
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :has_promoter ;
+                                                                                    owl:someValuesFrom <http://ontology.decidim.org/decidim_roadmap/#Agent>
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :has_scope ;
+                                                                                    owl:someValuesFrom :SectorialScope
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :has_scope ;
+                                                                                    owl:someValuesFrom :TerritorialScope
+                                                                                  ] ,
+                                                                                  [ rdf:type owl:Restriction ;
+                                                                                    owl:onProperty :has_platform ;
+                                                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                    owl:onClass :ParticipationPlatform
+                                                                                  ] ;
+                                                                  rdfs:comment """ParticipationSpaces are the frameworks in which participation takes place. They represent the channels to which the citizens or the members of an organization can articulate collective needs and proposals, and take decisions.
+
+There are different kinds of spaces: Processes, Initiatives, Assemblies, Consultations. Additionally, ProcessGroups are spaces that include and group together more than one Process.
+
+A ParticipationSpace is vinculated to an Agent that promotes it, usually a SovereignOrganization that aims to involve its members or the citizenry in a collective decision making effort. 
+
+A ParticipationSpace is specified by a TerritorialScope and a SectorialScope that delimit its scope.
+
+A ParticipationSpace has some Configurator that allows its configuration and management by RegisteredParticipants having an administrative role that grants them permissions over the ParticipationSpace."""@en ;
+                                                                  rdfs:label "Participation space"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant
+<http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> rdf:type owl:Class ;
+                                                                     rdfs:subClassOf <http://ontology.decidim.org/decidim_roadmap/#Participant> ;
+                                                                     rdfs:comment "A participant corresponding to a registered account in the platform."@en ;
+                                                                     rdfs:label "Registered participant"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant
+<http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+                                                                   rdfs:comment "RegisteredParticipant whose account has been verified to correspond to the real world entity it represents, be it an individual person (VerifiedPerson subclass) or a group (VerifiedGroup subclass)."^^xsd:string ;
+                                                                   rdfs:label "Verified participant"@en .
+
+
+###  Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/

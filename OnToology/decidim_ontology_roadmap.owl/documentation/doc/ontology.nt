@@ -1,0 +1,1208 @@
+<http://ontology.decidim.org/decidim_roadmap/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://ontology.decidim.org/decidim_roadmap/> <http://www.w3.org/2002/07/owl#versionIRI> <http://ontology.decidim.org/decidim_roadmap/1.0.0> .
+<http://ontology.decidim.org/decidim_roadmap/> <http://www.w3.org/2000/01/rdf-schema#comment> "OWL ontology for participatory democracy in Decidim.\n\nIt provides a formal definition of the types, properties, and interrelationships of the entities that constitute the socio-technical ecosystem of participative democracy in the context of the Decidim platform.\n\nThe ontology is formalized and written using the machine-processable language RDF/OWL (Web Ontology Language) for knowledge representation.\n\nThis version of the ontology describes not only the current functionalities of Decidim, but also the functionalitites under development and foreseen in the development roadmap."@en .
+<http://ontology.decidim.org/decidim_roadmap/> <http://www.w3.org/2000/01/rdf-schema#label> "Decidim Ontology"@en .
+<http://ontology.decidim.org/decidim_roadmap/> <http://www.w3.org/2002/07/owl#versionInfo> "1.0.0"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://ontology.decidim.org/decidim_roadmap/acts_on
+<http://ontology.decidim.org/decidim_roadmap/acts_on> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/acts_on> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/acts_on> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#Agent> .
+<http://ontology.decidim.org/decidim_roadmap/acts_on> <http://www.w3.org/2000/01/rdf-schema#comment> "General property that defines the relationship between an Agent and an entity on which it perform some action.\n\nInverse property of has_actor and it has domain Agent."@en .
+<http://ontology.decidim.org/decidim_roadmap/acts_on> <http://www.w3.org/2000/01/rdf-schema#label> "acts on"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/administrator_of
+<http://ontology.decidim.org/decidim_roadmap/administrator_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/administrator_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/administrator_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/has_administrator> .
+<http://ontology.decidim.org/decidim_roadmap/administrator_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/administrator_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/administrator_of> <http://www.w3.org/2000/01/rdf-schema#label> "administrator of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/amendment_of
+<http://ontology.decidim.org/decidim_roadmap/amendment_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/amendment_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/refers_to> .
+<http://ontology.decidim.org/decidim_roadmap/amendment_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/has_amendment> .
+<http://ontology.decidim.org/decidim_roadmap/amendment_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/amendment_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Amendment> .
+<http://ontology.decidim.org/decidim_roadmap/amendment_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/amendment_of> <http://www.w3.org/2000/01/rdf-schema#label> "amendment of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/attendee_of
+<http://ontology.decidim.org/decidim_roadmap/attendee_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/attendee_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/attendee_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/has_attendee> .
+<http://ontology.decidim.org/decidim_roadmap/attendee_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> .
+<http://ontology.decidim.org/decidim_roadmap/attendee_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Meeting> .
+<http://ontology.decidim.org/decidim_roadmap/attendee_of> <http://www.w3.org/2000/01/rdf-schema#label> "attendee of" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/belong_to
+<http://ontology.decidim.org/decidim_roadmap/belong_to> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/belong_to> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/includes> .
+<http://ontology.decidim.org/decidim_roadmap/belong_to> <http://www.w3.org/2000/01/rdf-schema#comment> "This general property links an entity to another entity it belongs to.\n\nIt is inverse property of property includes."@en .
+<http://ontology.decidim.org/decidim_roadmap/belong_to> <http://www.w3.org/2000/01/rdf-schema#label> "belongs to"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/category_of
+<http://ontology.decidim.org/decidim_roadmap/category_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/category_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/specifies> .
+<http://ontology.decidim.org/decidim_roadmap/category_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/has_category> .
+<http://ontology.decidim.org/decidim_roadmap/category_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Category> .
+<http://ontology.decidim.org/decidim_roadmap/category_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/category_of> <http://www.w3.org/2000/01/rdf-schema#label> "category of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/collaborator_of
+<http://ontology.decidim.org/decidim_roadmap/collaborator_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/collaborator_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/collaborator_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/has_collaborator> .
+<http://ontology.decidim.org/decidim_roadmap/collaborator_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/collaborator_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/collaborator_of> <http://www.w3.org/2000/01/rdf-schema#label> "collaborator of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/comment_voted_by
+<http://ontology.decidim.org/decidim_roadmap/comment_voted_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/comment_voted_by> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/comment_voted_by> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/votes_comment> .
+<http://ontology.decidim.org/decidim_roadmap/comment_voted_by> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Comment> .
+<http://ontology.decidim.org/decidim_roadmap/comment_voted_by> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/comment_voted_by> <http://www.w3.org/2000/01/rdf-schema#label> "comment voted by" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/configurator_of
+<http://ontology.decidim.org/decidim_roadmap/configurator_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/configurator_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/belong_to> .
+<http://ontology.decidim.org/decidim_roadmap/configurator_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/has_configurator> .
+<http://ontology.decidim.org/decidim_roadmap/configurator_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/configurator_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Configurator> .
+<http://ontology.decidim.org/decidim_roadmap/configurator_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/configurator_of> <http://www.w3.org/2000/01/rdf-schema#label> "configurator of" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/container_of
+<http://ontology.decidim.org/decidim_roadmap/container_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/container_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/includes> .
+<http://ontology.decidim.org/decidim_roadmap/container_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/has_container> .
+<http://ontology.decidim.org/decidim_roadmap/container_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Container> .
+<http://ontology.decidim.org/decidim_roadmap/container_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/container_of> <http://www.w3.org/2000/01/rdf-schema#label> "container of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/creator_of
+<http://ontology.decidim.org/decidim_roadmap/creator_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/creator_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/creator_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/has_creator> .
+<http://ontology.decidim.org/decidim_roadmap/creator_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/creator_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/creator_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/creator_of> <http://www.w3.org/2000/01/rdf-schema#label> "creator of" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/derives
+<http://ontology.decidim.org/decidim_roadmap/derives> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/derives> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/referred_by> .
+<http://ontology.decidim.org/decidim_roadmap/derives> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/derives_from> .
+<http://ontology.decidim.org/decidim_roadmap/derives> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Result> .
+<http://ontology.decidim.org/decidim_roadmap/derives> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Project> .
+<http://ontology.decidim.org/decidim_roadmap/derives> <http://www.w3.org/2000/01/rdf-schema#label> "derives"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/derives_from
+<http://ontology.decidim.org/decidim_roadmap/derives_from> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/derives_from> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/refers_to> .
+<http://ontology.decidim.org/decidim_roadmap/derives_from> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Project> .
+<http://ontology.decidim.org/decidim_roadmap/derives_from> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Result> .
+<http://ontology.decidim.org/decidim_roadmap/derives_from> <http://www.w3.org/2000/01/rdf-schema#label> "derived from"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/endorser_of
+<http://ontology.decidim.org/decidim_roadmap/endorser_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/endorser_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/endorser_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/has_endorser> .
+<http://ontology.decidim.org/decidim_roadmap/endorser_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/endorser_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/endorser_of> <http://www.w3.org/2000/01/rdf-schema#label> "endorser of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/first_comment_of
+<http://ontology.decidim.org/decidim_roadmap/first_comment_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/first_comment_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/belong_to> .
+<http://ontology.decidim.org/decidim_roadmap/first_comment_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/has_first_comment> .
+<http://ontology.decidim.org/decidim_roadmap/first_comment_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/first_comment_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/FirstLevelComment> .
+<http://ontology.decidim.org/decidim_roadmap/first_comment_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Thread> .
+<http://ontology.decidim.org/decidim_roadmap/first_comment_of> <http://www.w3.org/2000/01/rdf-schema#comment> "By opening a discussion about an Item, a FirstLevelComment starts a Thread. This property associates a FirstLevelComment to the corresponding Thread."@en .
+<http://ontology.decidim.org/decidim_roadmap/first_comment_of> <http://www.w3.org/2000/01/rdf-schema#label> "first comment of" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/follower_of
+<http://ontology.decidim.org/decidim_roadmap/follower_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/follower_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/follower_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/has_follower> .
+<http://ontology.decidim.org/decidim_roadmap/follower_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/follower_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/follower_of> <http://www.w3.org/2000/01/rdf-schema#comment> "This property associates a RegisteredParticipant to an Item they have subscribed to, in order to receive notifications and updates about it."@en .
+<http://ontology.decidim.org/decidim_roadmap/follower_of> <http://www.w3.org/2000/01/rdf-schema#label> "follower of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/functionality_of
+<http://ontology.decidim.org/decidim_roadmap/functionality_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/functionality_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/belong_to> .
+<http://ontology.decidim.org/decidim_roadmap/functionality_of> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/has_functionality> .
+<http://ontology.decidim.org/decidim_roadmap/functionality_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> .
+<http://ontology.decidim.org/decidim_roadmap/functionality_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> .
+<http://ontology.decidim.org/decidim_roadmap/functionality_of> <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates that a ParticipationSpace includes a ParticipationFunctionality. \nEach ParticipationSpace can include more instances of the same kind of functionality; for example, a Process may include various Debates and Pages."@en .
+<http://ontology.decidim.org/decidim_roadmap/functionality_of> <http://www.w3.org/2000/01/rdf-schema#label> "functionality of" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/granted_by
+<http://ontology.decidim.org/decidim_roadmap/granted_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/granted_by> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/granted_by> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/grants> .
+<http://ontology.decidim.org/decidim_roadmap/granted_by> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Role> .
+<http://ontology.decidim.org/decidim_roadmap/granted_by> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/granted_by> <http://www.w3.org/2000/01/rdf-schema#label> "granted by" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/grants
+<http://ontology.decidim.org/decidim_roadmap/grants> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/grants> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/grants> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/grants> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Role> .
+<http://ontology.decidim.org/decidim_roadmap/grants> <http://www.w3.org/2000/01/rdf-schema#label> "grants" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_actor
+<http://ontology.decidim.org/decidim_roadmap/has_actor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_actor> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#Agent> .
+<http://ontology.decidim.org/decidim_roadmap/has_actor> <http://www.w3.org/2000/01/rdf-schema#comment> "general property that defines the relation between an entity and an Agent that performs some action on it.\n\nIt is inverse property of acts_on, and it has range Agent."@en .
+<http://ontology.decidim.org/decidim_roadmap/has_actor> <http://www.w3.org/2000/01/rdf-schema#label> "has actor"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_administrator
+<http://ontology.decidim.org/decidim_roadmap/has_administrator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_administrator> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/has_administrator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/has_administrator> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/has_administrator> <http://www.w3.org/2000/01/rdf-schema#label> "has administrator"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_amendment
+<http://ontology.decidim.org/decidim_roadmap/has_amendment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_amendment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/referred_by> .
+<http://ontology.decidim.org/decidim_roadmap/has_amendment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_amendment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/has_amendment> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Amendment> .
+<http://ontology.decidim.org/decidim_roadmap/has_amendment> <http://www.w3.org/2000/01/rdf-schema#label> "has amendment" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_attendee
+<http://ontology.decidim.org/decidim_roadmap/has_attendee> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_attendee> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/has_attendee> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Meeting> .
+<http://ontology.decidim.org/decidim_roadmap/has_attendee> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> .
+<http://ontology.decidim.org/decidim_roadmap/has_attendee> <http://www.w3.org/2000/01/rdf-schema#label> "has attendee"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_category
+<http://ontology.decidim.org/decidim_roadmap/has_category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_category> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/specified_by> .
+<http://ontology.decidim.org/decidim_roadmap/has_category> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/has_category> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Category> .
+<http://ontology.decidim.org/decidim_roadmap/has_category> <http://www.w3.org/2000/01/rdf-schema#label> "has category"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_collaborator
+<http://ontology.decidim.org/decidim_roadmap/has_collaborator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_collaborator> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/has_collaborator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/has_collaborator> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/has_collaborator> <http://www.w3.org/2000/01/rdf-schema#label> "has collaborator"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_configurator
+<http://ontology.decidim.org/decidim_roadmap/has_configurator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_configurator> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/includes> .
+<http://ontology.decidim.org/decidim_roadmap/has_configurator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_configurator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/has_configurator> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Configurator> .
+<http://ontology.decidim.org/decidim_roadmap/has_configurator> <http://www.w3.org/2000/01/rdf-schema#label> "has configurator" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_container
+<http://ontology.decidim.org/decidim_roadmap/has_container> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_container> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/belong_to> .
+<http://ontology.decidim.org/decidim_roadmap/has_container> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/has_container> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Container> .
+<http://ontology.decidim.org/decidim_roadmap/has_container> <http://www.w3.org/2000/01/rdf-schema#label> "has container"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_creator
+<http://ontology.decidim.org/decidim_roadmap/has_creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_creator> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/has_creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_creator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/has_creator> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/has_creator> <http://www.w3.org/2000/01/rdf-schema#comment> "This property links an AuthoredItem to its creator."@en .
+<http://ontology.decidim.org/decidim_roadmap/has_creator> <http://www.w3.org/2000/01/rdf-schema#label> "has creator" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_endorser
+<http://ontology.decidim.org/decidim_roadmap/has_endorser> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_endorser> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/has_endorser> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/has_endorser> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/has_endorser> <http://www.w3.org/2000/01/rdf-schema#label> "has endorser" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_first_comment
+<http://ontology.decidim.org/decidim_roadmap/has_first_comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_first_comment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/includes> .
+<http://ontology.decidim.org/decidim_roadmap/has_first_comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_first_comment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Thread> .
+<http://ontology.decidim.org/decidim_roadmap/has_first_comment> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/FirstLevelComment> .
+<http://ontology.decidim.org/decidim_roadmap/has_first_comment> <http://www.w3.org/2000/01/rdf-schema#comment> "This property associates a Thread with the FirstLevelComment that opens it."@en .
+<http://ontology.decidim.org/decidim_roadmap/has_first_comment> <http://www.w3.org/2000/01/rdf-schema#label> "has first comment"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_follower
+<http://ontology.decidim.org/decidim_roadmap/has_follower> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_follower> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/has_follower> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/has_follower> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/has_follower> <http://www.w3.org/2000/01/rdf-schema#label> "has follower"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_functionality
+<http://ontology.decidim.org/decidim_roadmap/has_functionality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_functionality> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/includes> .
+<http://ontology.decidim.org/decidim_roadmap/has_functionality> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> .
+<http://ontology.decidim.org/decidim_roadmap/has_functionality> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> .
+<http://ontology.decidim.org/decidim_roadmap/has_functionality> <http://www.w3.org/2000/01/rdf-schema#label> "has functionality" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_initiative
+<http://ontology.decidim.org/decidim_roadmap/has_initiative> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_initiative> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/belong_to> .
+<http://ontology.decidim.org/decidim_roadmap/has_initiative> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/initiative_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_initiative> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_initiative> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Initiative> .
+<http://ontology.decidim.org/decidim_roadmap/has_initiative> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/has_initiative> <http://www.w3.org/2000/01/rdf-schema#label> "has initiative" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_member
+<http://ontology.decidim.org/decidim_roadmap/has_member> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_member> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/includes> .
+<http://ontology.decidim.org/decidim_roadmap/has_member> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/member_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_member> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Group> .
+<http://ontology.decidim.org/decidim_roadmap/has_member> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/has_member> <http://www.w3.org/2000/01/rdf-schema#label> "has member"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_moderator
+<http://ontology.decidim.org/decidim_roadmap/has_moderator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_moderator> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/has_moderator> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/moderator_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_moderator> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/has_moderator> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/has_moderator> <http://www.w3.org/2000/01/rdf-schema#label> "has moderator"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_phase
+<http://ontology.decidim.org/decidim_roadmap/has_phase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_phase> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/includes> .
+<http://ontology.decidim.org/decidim_roadmap/has_phase> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/phase_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_phase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#InverseFunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_phase> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Process> .
+<http://ontology.decidim.org/decidim_roadmap/has_phase> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Phase> .
+<http://ontology.decidim.org/decidim_roadmap/has_phase> <http://www.w3.org/2000/01/rdf-schema#label> "has phase"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_platform
+<http://ontology.decidim.org/decidim_roadmap/has_platform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_platform> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/belong_to> .
+<http://ontology.decidim.org/decidim_roadmap/has_platform> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/platform_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_platform> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> .
+<http://ontology.decidim.org/decidim_roadmap/has_platform> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> .
+<http://ontology.decidim.org/decidim_roadmap/has_platform> <http://www.w3.org/2000/01/rdf-schema#label> "has platform"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_promoter
+<http://ontology.decidim.org/decidim_roadmap/has_promoter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_promoter> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/has_promoter> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/promoter_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_promoter> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> .
+<http://ontology.decidim.org/decidim_roadmap/has_promoter> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Group> .
+<http://ontology.decidim.org/decidim_roadmap/has_promoter> <http://www.w3.org/2000/01/rdf-schema#label> "has promoter"@en .
+<http://ontology.decidim.org/decidim_roadmap/has_promoter> <http://www.w3.org/2000/01/rdf-schema#label> "promoted by" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_reply
+<http://ontology.decidim.org/decidim_roadmap/has_reply> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_reply> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/referred_by> .
+<http://ontology.decidim.org/decidim_roadmap/has_reply> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/reply_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_reply> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/has_reply> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Comment> .
+<http://ontology.decidim.org/decidim_roadmap/has_reply> <http://www.w3.org/2000/01/rdf-schema#comment> "Points to an Comment that is a reply or response to this Item."@en .
+<http://ontology.decidim.org/decidim_roadmap/has_reply> <http://www.w3.org/2000/01/rdf-schema#label> "has reply"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_result
+<http://ontology.decidim.org/decidim_roadmap/has_result> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_result> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/referred_by> .
+<http://ontology.decidim.org/decidim_roadmap/has_result> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/result_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_result> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/has_result> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Result> .
+<http://ontology.decidim.org/decidim_roadmap/has_result> <http://www.w3.org/2000/01/rdf-schema#label> "has result" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_role
+<http://ontology.decidim.org/decidim_roadmap/has_role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_role> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/specified_by> .
+<http://ontology.decidim.org/decidim_roadmap/has_role> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/role_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_role> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/has_role> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Role> .
+<http://ontology.decidim.org/decidim_roadmap/has_role> <http://www.w3.org/2000/01/rdf-schema#label> "has role" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_role_scope
+<http://ontology.decidim.org/decidim_roadmap/has_role_scope> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_role_scope> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/specified_by> .
+<http://ontology.decidim.org/decidim_roadmap/has_role_scope> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/role_scope_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_role_scope> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_role_scope> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Role> .
+<http://ontology.decidim.org/decidim_roadmap/has_role_scope> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/has_role_scope> <http://www.w3.org/2000/01/rdf-schema#label> "has role scope"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_scope
+<http://ontology.decidim.org/decidim_roadmap/has_scope> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_scope> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/specified_by> .
+<http://ontology.decidim.org/decidim_roadmap/has_scope> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/scope_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_scope> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Scope> .
+<http://ontology.decidim.org/decidim_roadmap/has_scope> <http://www.w3.org/2000/01/rdf-schema#label> "has scope"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_subcategory
+<http://ontology.decidim.org/decidim_roadmap/has_subcategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_subcategory> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/includes> .
+<http://ontology.decidim.org/decidim_roadmap/has_subcategory> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/subcategory_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_subcategory> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Category> .
+<http://ontology.decidim.org/decidim_roadmap/has_subcategory> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Category> .
+<http://ontology.decidim.org/decidim_roadmap/has_subcategory> <http://www.w3.org/2000/01/rdf-schema#label> "has_subcategory"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_subgroup
+<http://ontology.decidim.org/decidim_roadmap/has_subgroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_subgroup> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/includes> .
+<http://ontology.decidim.org/decidim_roadmap/has_subgroup> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Group> .
+<http://ontology.decidim.org/decidim_roadmap/has_subgroup> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Group> .
+<http://ontology.decidim.org/decidim_roadmap/has_subgroup> <http://www.w3.org/2000/01/rdf-schema#label> "has subgroup"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/has_supporter
+<http://ontology.decidim.org/decidim_roadmap/has_supporter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_supporter> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/has_supporter> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/supporter_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_supporter> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/has_supporter> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> .
+<http://ontology.decidim.org/decidim_roadmap/has_supporter> <http://www.w3.org/2000/01/rdf-schema#label> "has supporter"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/includes
+<http://ontology.decidim.org/decidim_roadmap/includes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/includes> <http://www.w3.org/2000/01/rdf-schema#comment> "This general property links an entity to another entity belonging to it.\n\nIt is inverse property of belongs_to."@en .
+<http://ontology.decidim.org/decidim_roadmap/includes> <http://www.w3.org/2000/01/rdf-schema#label> "includes"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/initiative_of
+<http://ontology.decidim.org/decidim_roadmap/initiative_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/initiative_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/includes> .
+<http://ontology.decidim.org/decidim_roadmap/initiative_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/initiative_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/initiative_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Initiative> .
+<http://ontology.decidim.org/decidim_roadmap/initiative_of> <http://www.w3.org/2000/01/rdf-schema#label> "initiative of" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/member_of
+<http://ontology.decidim.org/decidim_roadmap/member_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/member_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/belong_to> .
+<http://ontology.decidim.org/decidim_roadmap/member_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/member_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Group> .
+<http://ontology.decidim.org/decidim_roadmap/member_of> <http://www.w3.org/2000/01/rdf-schema#label> "member of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/mentioned_by
+<http://ontology.decidim.org/decidim_roadmap/mentioned_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/mentioned_by> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/referred_by> .
+<http://ontology.decidim.org/decidim_roadmap/mentioned_by> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/mentions> .
+<http://ontology.decidim.org/decidim_roadmap/mentioned_by> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/mentioned_by> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Comment> .
+<http://ontology.decidim.org/decidim_roadmap/mentioned_by> <http://www.w3.org/2000/01/rdf-schema#label> "mentioned by"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/mentions
+<http://ontology.decidim.org/decidim_roadmap/mentions> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/mentions> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/refers_to> .
+<http://ontology.decidim.org/decidim_roadmap/mentions> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Comment> .
+<http://ontology.decidim.org/decidim_roadmap/mentions> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/mentions> <http://www.w3.org/2000/01/rdf-schema#label> "mentions"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/moderator_of
+<http://ontology.decidim.org/decidim_roadmap/moderator_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/moderator_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/moderator_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/moderator_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/moderator_of> <http://www.w3.org/2000/01/rdf-schema#label> "moderator of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/phase_of
+<http://ontology.decidim.org/decidim_roadmap/phase_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/phase_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/belong_to> .
+<http://ontology.decidim.org/decidim_roadmap/phase_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/phase_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Phase> .
+<http://ontology.decidim.org/decidim_roadmap/phase_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Process> .
+<http://ontology.decidim.org/decidim_roadmap/phase_of> <http://www.w3.org/2000/01/rdf-schema#label> "phase of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/platform_of
+<http://ontology.decidim.org/decidim_roadmap/platform_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/platform_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/includes> .
+<http://ontology.decidim.org/decidim_roadmap/platform_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> .
+<http://ontology.decidim.org/decidim_roadmap/platform_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> .
+<http://ontology.decidim.org/decidim_roadmap/platform_of> <http://www.w3.org/2000/01/rdf-schema#label> "platform of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/promoter_of
+<http://ontology.decidim.org/decidim_roadmap/promoter_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/promoter_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/promoter_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Group> .
+<http://ontology.decidim.org/decidim_roadmap/promoter_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> .
+<http://ontology.decidim.org/decidim_roadmap/promoter_of> <http://www.w3.org/2000/01/rdf-schema#comment> "" .
+<http://ontology.decidim.org/decidim_roadmap/promoter_of> <http://www.w3.org/2000/01/rdf-schema#label> "promoter of"@en .
+<http://ontology.decidim.org/decidim_roadmap/promoter_of> <http://www.w3.org/2000/01/rdf-schema#label> "promotes" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/referenced_by
+<http://ontology.decidim.org/decidim_roadmap/referenced_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/referenced_by> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/referred_by> .
+<http://ontology.decidim.org/decidim_roadmap/referenced_by> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/references> .
+<http://ontology.decidim.org/decidim_roadmap/referenced_by> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/referenced_by> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/referenced_by> <http://www.w3.org/2000/01/rdf-schema#label> "referenced by"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/references
+<http://ontology.decidim.org/decidim_roadmap/references> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/references> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/refers_to> .
+<http://ontology.decidim.org/decidim_roadmap/references> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/references> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/references> <http://www.w3.org/2000/01/rdf-schema#label> "references" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/referred_by
+<http://ontology.decidim.org/decidim_roadmap/referred_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/referred_by> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/refers_to> .
+<http://ontology.decidim.org/decidim_roadmap/referred_by> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/referred_by> <http://www.w3.org/2000/01/rdf-schema#comment> "This general property indicates that an entity points to an Item that refers to it in some way. This may be because the entity is mentioned, references, amended or replied to by the Item. Specific subproperties help distinguish these different cases.\n\nIt is inverse property of refers_to."@en .
+<http://ontology.decidim.org/decidim_roadmap/referred_by> <http://www.w3.org/2000/01/rdf-schema#label> "referred by"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/refers_to
+<http://ontology.decidim.org/decidim_roadmap/refers_to> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/refers_to> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/refers_to> <http://www.w3.org/2000/01/rdf-schema#comment> "This general property indicates that an Item points to an entity is referred to in some way. This may be because the Item mentions, references, amends or replies to it. Specific subproperties help distinguish these different cases.\n\nIt is inverse property of referred_by."@en .
+<http://ontology.decidim.org/decidim_roadmap/refers_to> <http://www.w3.org/2000/01/rdf-schema#label> "refers to"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/related_to
+<http://ontology.decidim.org/decidim_roadmap/related_to> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/related_to> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#SymmetricProperty> .
+<http://ontology.decidim.org/decidim_roadmap/related_to> <http://www.w3.org/2000/01/rdf-schema#comment> "Symmetric object property indicating that two individual are related to each other."@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/reply_of
+<http://ontology.decidim.org/decidim_roadmap/reply_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/reply_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/refers_to> .
+<http://ontology.decidim.org/decidim_roadmap/reply_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<http://ontology.decidim.org/decidim_roadmap/reply_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Comment> .
+<http://ontology.decidim.org/decidim_roadmap/reply_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/reply_of> <http://www.w3.org/2000/01/rdf-schema#comment> "Points to an Item which this Comment replies to."@en .
+<http://ontology.decidim.org/decidim_roadmap/reply_of> <http://www.w3.org/2000/01/rdf-schema#label> "reply of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/reported_by
+<http://ontology.decidim.org/decidim_roadmap/reported_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/reported_by> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/reported_by> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/reports> .
+<http://ontology.decidim.org/decidim_roadmap/reported_by> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/reported_by> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/reported_by> <http://www.w3.org/2000/01/rdf-schema#label> "reported by"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/reports
+<http://ontology.decidim.org/decidim_roadmap/reports> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/reports> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/reports> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/reports> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/reports> <http://www.w3.org/2000/01/rdf-schema#label> "reports"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/result_of
+<http://ontology.decidim.org/decidim_roadmap/result_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/result_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/refers_to> .
+<http://ontology.decidim.org/decidim_roadmap/result_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Result> .
+<http://ontology.decidim.org/decidim_roadmap/result_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/result_of> <http://www.w3.org/2000/01/rdf-schema#label> "result of" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/role_of
+<http://ontology.decidim.org/decidim_roadmap/role_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/role_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/specifies> .
+<http://ontology.decidim.org/decidim_roadmap/role_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Role> .
+<http://ontology.decidim.org/decidim_roadmap/role_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/role_of> <http://www.w3.org/2000/01/rdf-schema#label> "role of" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/role_scope_of
+<http://ontology.decidim.org/decidim_roadmap/role_scope_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/role_scope_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/specifies> .
+<http://ontology.decidim.org/decidim_roadmap/role_scope_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/role_scope_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Role> .
+<http://ontology.decidim.org/decidim_roadmap/role_scope_of> <http://www.w3.org/2000/01/rdf-schema#label> "role scope of" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/scope_of
+<http://ontology.decidim.org/decidim_roadmap/scope_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/scope_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/specifies> .
+<http://ontology.decidim.org/decidim_roadmap/scope_of> <http://www.w3.org/2000/01/rdf-schema#label> "scope of" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/similar_to
+<http://ontology.decidim.org/decidim_roadmap/similar_to> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/similar_to> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/related_to> .
+<http://ontology.decidim.org/decidim_roadmap/similar_to> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/similar_to> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/similar_to> <http://www.w3.org/2000/01/rdf-schema#comment> "Symmetric object property that indicates that two Participation items (e.g., two Proposals) are similar to each other."@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/specified_by
+<http://ontology.decidim.org/decidim_roadmap/specified_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/specified_by> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/specifies> .
+<http://ontology.decidim.org/decidim_roadmap/specified_by> <http://www.w3.org/2000/01/rdf-schema#comment> "General property that indicates that some aspect or attribute of the entity is specified by an other one."@en .
+<http://ontology.decidim.org/decidim_roadmap/specified_by> <http://www.w3.org/2000/01/rdf-schema#label> "specified by"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/specifies
+<http://ontology.decidim.org/decidim_roadmap/specifies> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/specifies> <http://www.w3.org/2000/01/rdf-schema#comment> "General property that indicates that an entity specifies an aspect or attribute of another entity, such as its Scope, Category or Role.\n\nIt is inverse property of specified_by."@en .
+<http://ontology.decidim.org/decidim_roadmap/specifies> <http://www.w3.org/2000/01/rdf-schema#label> "specifies"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/subcategory_of
+<http://ontology.decidim.org/decidim_roadmap/subcategory_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/subcategory_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/belong_to> .
+<http://ontology.decidim.org/decidim_roadmap/subcategory_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Category> .
+<http://ontology.decidim.org/decidim_roadmap/subcategory_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Category> .
+<http://ontology.decidim.org/decidim_roadmap/subcategory_of> <http://www.w3.org/2000/01/rdf-schema#label> "subcategory of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/subgroup_of
+<http://ontology.decidim.org/decidim_roadmap/subgroup_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/subgroup_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/belong_to> .
+<http://ontology.decidim.org/decidim_roadmap/subgroup_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/Group> .
+<http://ontology.decidim.org/decidim_roadmap/subgroup_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Group> .
+<http://ontology.decidim.org/decidim_roadmap/subgroup_of> <http://www.w3.org/2000/01/rdf-schema#label> "subgroup of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/supporter_of
+<http://ontology.decidim.org/decidim_roadmap/supporter_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/supporter_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/supporter_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> .
+<http://ontology.decidim.org/decidim_roadmap/supporter_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/supporter_of> <http://www.w3.org/2000/01/rdf-schema#label> "supporter of"@en .
+<http://ontology.decidim.org/decidim_roadmap/supporter_of> <http://www.w3.org/2000/01/rdf-schema#label> "supports" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/votes_comment
+<http://ontology.decidim.org/decidim_roadmap/votes_comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/votes_comment> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/votes_comment> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/votes_comment> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Comment> .
+<http://ontology.decidim.org/decidim_roadmap/votes_comment> <http://www.w3.org/2000/01/rdf-schema#label> "votes comment" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/withdrawn_by
+<http://ontology.decidim.org/decidim_roadmap/withdrawn_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/withdrawn_by> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/withdrawn_by> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/withdraws> .
+<http://ontology.decidim.org/decidim_roadmap/withdrawn_by> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/withdrawn_by> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/withdrawn_by> <http://www.w3.org/2000/01/rdf-schema#label> "withdrawn by"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/withdraws
+<http://ontology.decidim.org/decidim_roadmap/withdraws> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/withdraws> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/withdraws> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/withdraws> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/withdraws> <http://www.w3.org/2000/01/rdf-schema#label> "withdraws"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://ontology.decidim.org/decidim_roadmap/AccountabilityContainer
+<http://ontology.decidim.org/decidim_roadmap/AccountabilityContainer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/AccountabilityContainer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Container> .
+<http://ontology.decidim.org/decidim_roadmap/AccountabilityContainer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/container_of> .
+_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Result> .
+<http://ontology.decidim.org/decidim_roadmap/AccountabilityContainer> <http://www.w3.org/2000/01/rdf-schema#comment> "This functionality allows participants to monitor the results of a participation space, and the progress of derived projects.\n\nIt is a ParticipationFunctionality of kind Container, and includes Items of kind Result, vinculated to the corresponding accepted Proposals and to projects deriving from them."@en .
+<http://ontology.decidim.org/decidim_roadmap/AccountabilityContainer> <http://www.w3.org/2000/01/rdf-schema#label> "Accountability container"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Administrator
+<http://ontology.decidim.org/decidim_roadmap/Administrator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Administrator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Moderator> .
+<http://ontology.decidim.org/decidim_roadmap/Administrator> <http://www.w3.org/2000/01/rdf-schema#comment> "A registered participant who has the role of Administrator on a ParticipationArtifact can configure and manage it, and can grant other RegisteredParticipants administration permissions of Collaborator, Moderator or Administrator in the same ParticipationArtifact or on a ParticipationArtifact contained in it."@en .
+<http://ontology.decidim.org/decidim_roadmap/Administrator> <http://www.w3.org/2000/01/rdf-schema#label> "Administrator"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Amendment
+<http://ontology.decidim.org/decidim_roadmap/Amendment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Amendment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/Amendment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/amendment_of> .
+_:genid2 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid2 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/Amendment> <http://www.w3.org/2000/01/rdf-schema#comment> "An Amendment is a kind of Proposal that refers to a specific Proposal it proposes to enmend, to which it is linked through the property amendment_of."@en .
+<http://ontology.decidim.org/decidim_roadmap/Amendment> <http://www.w3.org/2000/01/rdf-schema#label> "Amendment"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Assembly
+<http://ontology.decidim.org/decidim_roadmap/Assembly> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Assembly> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Group> .
+<http://ontology.decidim.org/decidim_roadmap/Assembly> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> .
+<http://ontology.decidim.org/decidim_roadmap/Assembly> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_promoter> .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> .
+<http://ontology.decidim.org/decidim_roadmap/Assembly> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/Consultation> .
+<http://ontology.decidim.org/decidim_roadmap/Assembly> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/Initiative> .
+<http://ontology.decidim.org/decidim_roadmap/Assembly> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/Process> .
+<http://ontology.decidim.org/decidim_roadmap/Assembly> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/ProcessGroup> .
+<http://ontology.decidim.org/decidim_roadmap/Assembly> <http://www.w3.org/2000/01/rdf-schema#comment> "An assembly is a participation space, defined as a structured group of participants that meet periodically, individually or representatively, and can create proposals and make decisions. Beyond being a Participation space, an assembly is also a Group, and as such it can be the promoter of a Process, or participate in other participation spaces.\n\nAn Assembly may have WorkingGroups, i.e. subgroups created to work on specific issues."@en .
+<http://ontology.decidim.org/decidim_roadmap/Assembly> <http://www.w3.org/2000/01/rdf-schema#label> "Assembly"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Attribute
+<http://ontology.decidim.org/decidim_roadmap/Attribute> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Attribute> <http://www.w3.org/2000/01/rdf-schema#comment> "General class for entities that represent an attribute of other entities, such as their Scope or Category."@en .
+<http://ontology.decidim.org/decidim_roadmap/Attribute> <http://www.w3.org/2000/01/rdf-schema#label> "Attribute"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/AuthoredItem
+<http://ontology.decidim.org/decidim_roadmap/AuthoredItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/AuthoredItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/AuthoredItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_creator> .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/AuthoredItem> <http://www.w3.org/2000/01/rdf-schema#comment> "This class represents Items that have an author. While some content in the Platform and ParticipationSpaces is created by the Adinistrators, AuthoredItems have a creator that can typically be any RegisteredParticipant."@en .
+<http://ontology.decidim.org/decidim_roadmap/AuthoredItem> <http://www.w3.org/2000/01/rdf-schema#label> "Authored item"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Blog
+<http://ontology.decidim.org/decidim_roadmap/Blog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Blog> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Container> .
+<http://ontology.decidim.org/decidim_roadmap/Blog> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/container_of> .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Blog_post> .
+<http://ontology.decidim.org/decidim_roadmap/Blog> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/container_of> .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Thread> .
+<http://ontology.decidim.org/decidim_roadmap/Blog> <http://www.w3.org/2000/01/rdf-schema#comment> "A Blog allows for the reation of pieces of content (BlogPosts) in shown in chronological order and classified according to the patform's content categorization system.\n\nA Blog is a ParticipationFunctionality of kind Container, that includes Items of kind BlogPost. Blog posts can in turn receive comments and conversation Threads, analogously to Proposals and other Items."@en .
+<http://ontology.decidim.org/decidim_roadmap/Blog> <http://www.w3.org/2000/01/rdf-schema#label> "Blog"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Blog_post
+<http://ontology.decidim.org/decidim_roadmap/Blog_post> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Blog_post> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/Blog_post> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_container> .
+_:genid7 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid7 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/Blog> .
+<http://ontology.decidim.org/decidim_roadmap/Blog_post> <http://www.w3.org/2000/01/rdf-schema#comment> "A BlogPost is a piece of content that is published within a Blog."@en .
+<http://ontology.decidim.org/decidim_roadmap/Blog_post> <http://www.w3.org/2000/01/rdf-schema#label> "Blog post"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/BudgetedProject
+<http://ontology.decidim.org/decidim_roadmap/BudgetedProject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/BudgetedProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/AuthoredItem> .
+<http://ontology.decidim.org/decidim_roadmap/BudgetedProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_container> .
+_:genid8 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/ParticipativeBudget> .
+<http://ontology.decidim.org/decidim_roadmap/BudgetedProject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_creator> .
+_:genid9 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/BudgetedProject> <http://www.w3.org/2000/01/rdf-schema#comment> "A kind of proposal, that has a budget associated with it."@en .
+<http://ontology.decidim.org/decidim_roadmap/BudgetedProject> <http://www.w3.org/2000/01/rdf-schema#label> "Budgeted project"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Category
+<http://ontology.decidim.org/decidim_roadmap/Category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Category> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Attribute> .
+<http://ontology.decidim.org/decidim_roadmap/Category> <http://www.w3.org/2000/01/rdf-schema#comment> "Categories are used to group items according to some criteria, typically the topic. They help participants browse and search information in a Participation space."@en .
+<http://ontology.decidim.org/decidim_roadmap/Category> <http://www.w3.org/2000/01/rdf-schema#label> "Category"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Collaborator
+<http://ontology.decidim.org/decidim_roadmap/Collaborator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Collaborator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Role> .
+<http://ontology.decidim.org/decidim_roadmap/Collaborator> <http://www.w3.org/2000/01/rdf-schema#comment> "A RegisteredParticipant having the Role of Collaborator in a given role scope can access the same information as an Administrator, including configuration panels, but cannot modify it."@en .
+<http://ontology.decidim.org/decidim_roadmap/Collaborator> <http://www.w3.org/2000/01/rdf-schema#label> "Collaborator"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Comment
+<http://ontology.decidim.org/decidim_roadmap/Comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Comment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/AuthoredItem> .
+<http://ontology.decidim.org/decidim_roadmap/Comment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_creator> .
+_:genid10 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid10 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/Comment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/reply_of> .
+_:genid11 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/Comment> <http://www.w3.org/2000/01/rdf-schema#comment> "Comments are ParticipationItems authored by RegisteredParticipants, that can be associated with different ParticipationFunctionalities and Items. \n\nA Comment can be referred to another comment (NestedComment) or to some other ParticipationItem (FirstLevelComment)."@en .
+<http://ontology.decidim.org/decidim_roadmap/Comment> <http://www.w3.org/2000/01/rdf-schema#label> "Comment"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Configurator
+<http://ontology.decidim.org/decidim_roadmap/Configurator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Configurator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/Configurator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/configurator_of> .
+_:genid12 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/Configurator> <http://www.w3.org/2000/01/rdf-schema#comment> "Administration panel associated to a ParticipationArtifact, that allows Administrators to configure it. Collaborators of the artifat can access the configurator but not modify it; moderators can also access the configurator, and additionally they can manage certain aspects such as accepting or rejecting proposals.\nA Configurator is linked to the ParticipationArtifacts it allows to configure through the property configurator_of."@en .
+<http://ontology.decidim.org/decidim_roadmap/Configurator> <http://www.w3.org/2000/01/rdf-schema#label> "Configurator"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Consultation
+<http://ontology.decidim.org/decidim_roadmap/Consultation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Consultation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> .
+<http://ontology.decidim.org/decidim_roadmap/Consultation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_promoter> .
+_:genid13 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> .
+<http://ontology.decidim.org/decidim_roadmap/Consultation> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/Initiative> .
+<http://ontology.decidim.org/decidim_roadmap/Consultation> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/Process> .
+<http://ontology.decidim.org/decidim_roadmap/Consultation> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/ProcessGroup> .
+<http://ontology.decidim.org/decidim_roadmap/Consultation> <http://www.w3.org/2000/01/rdf-schema#comment> "A Consultation is a ParticipationSpace that allows a votation on some issue, involving all the participants of the SovereignOrganization promoting it. Participants can not only vote, but also get information, debate and monitor the results."@en .
+<http://ontology.decidim.org/decidim_roadmap/Consultation> <http://www.w3.org/2000/01/rdf-schema#label> "Consultation"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Container
+<http://ontology.decidim.org/decidim_roadmap/Container> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Container> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> .
+<http://ontology.decidim.org/decidim_roadmap/Container> <http://www.w3.org/2000/01/rdf-schema#comment> "Functionalities of this kind contain ParticipationItems, to which they are linked to the property container_of. \n\nDifferent kinds of ParticipationContainers contain different kinds of ParticipationItems: for example, a Debate contains items of ind Thread and Comment, a ProposalIncubator contains Proposals, a ParticipativeBudget contains BudgetedProposals and a MeetingCalendar contains Meetings."@en .
+<http://ontology.decidim.org/decidim_roadmap/Container> <http://www.w3.org/2000/01/rdf-schema#label> "Participation container"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Debate
+<http://ontology.decidim.org/decidim_roadmap/Debate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Debate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Container> .
+<http://ontology.decidim.org/decidim_roadmap/Debate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/container_of> .
+_:genid14 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Blog_post> .
+<http://ontology.decidim.org/decidim_roadmap/Debate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/container_of> .
+_:genid15 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Thread> .
+<http://ontology.decidim.org/decidim_roadmap/Debate> <http://www.w3.org/2000/01/rdf-schema#comment> "This functionality allows for the creation of debates about specific questions, defined by the Administrators or by RegisteredParticipants.\n\nA Debate is a ParticipationFunctionality of kind Container, that includes Items of kind Comment, and the corresponding Threads."@en .
+<http://ontology.decidim.org/decidim_roadmap/Debate> <http://www.w3.org/2000/01/rdf-schema#label> "Debate"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/FirstLevelComment
+<http://ontology.decidim.org/decidim_roadmap/FirstLevelComment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/FirstLevelComment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Comment> .
+<http://ontology.decidim.org/decidim_roadmap/FirstLevelComment> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/NestedComment> .
+<http://ontology.decidim.org/decidim_roadmap/FirstLevelComment> <http://www.w3.org/2000/01/rdf-schema#comment> "A comment referred to some ParticipationItem, which is not another comment."@en .
+<http://ontology.decidim.org/decidim_roadmap/FirstLevelComment> <http://www.w3.org/2000/01/rdf-schema#label> "First level comment"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Group
+<http://ontology.decidim.org/decidim_roadmap/Group> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Group> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Organization> .
+<http://ontology.decidim.org/decidim_roadmap/Group> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/Group> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_member> .
+_:genid16 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/Group> <http://www.w3.org/2000/01/rdf-schema#comment> "A collective account corresponding to a group of registered participants."@en .
+<http://ontology.decidim.org/decidim_roadmap/Group> <http://www.w3.org/2000/01/rdf-schema#label> "Group"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Initiative
+<http://ontology.decidim.org/decidim_roadmap/Initiative> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Initiative> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> .
+<http://ontology.decidim.org/decidim_roadmap/Initiative> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_promoter> .
+_:genid17 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/Initiative> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/initiative_of> .
+_:genid18 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid18 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/Initiative> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/Process> .
+<http://ontology.decidim.org/decidim_roadmap/Initiative> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/ProcessGroup> .
+<http://ontology.decidim.org/decidim_roadmap/Initiative> <http://www.w3.org/2000/01/rdf-schema#comment> "While a Process is necessarily promoted by an organization, an Initiative is a ParticipationSpace that can be promoted by any VerifiedParticipant, i.e. by any individual citizen or organization whose account has been verified to correspond to their real identity. \n\nAn Initiative is always connected to a Proposal it promotes, with the goal of gathering support for it, and to be considered for acceptance by the SovereignOrganization running the ParticipationPlatform."@en .
+<http://ontology.decidim.org/decidim_roadmap/Initiative> <http://www.w3.org/2000/01/rdf-schema#label> "Initiative"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/ManagedAccount
+<http://ontology.decidim.org/decidim_roadmap/ManagedAccount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/ManagedAccount> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> .
+<http://ontology.decidim.org/decidim_roadmap/ManagedAccount> <http://www.w3.org/2000/01/rdf-schema#comment> "A ManagedAccount is an account managed on behalf of another Person, that for some reason is not able to manage it by themselves."@en .
+<http://ontology.decidim.org/decidim_roadmap/ManagedAccount> <http://www.w3.org/2000/01/rdf-schema#label> "Managed account"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Meeting
+<http://ontology.decidim.org/decidim_roadmap/Meeting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Meeting> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/Meeting> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_attendee> .
+_:genid19 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/Meeting> <http://www.w3.org/2000/01/rdf-schema#comment> "A Meeting is a physical gathering in which RegisteredParticipants can meet presentially to discuss about some issue and create Proposals. \n\nA Meeting is linked to the participants attending it through the property has_attendee.\n\nA Meeting can be included in a Workshop or in an EventCalendar associated to some ParticipationSpace."@en .
+<http://ontology.decidim.org/decidim_roadmap/Meeting> <http://www.w3.org/2000/01/rdf-schema#label> "Meeting"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/MeetingCalendar
+<http://ontology.decidim.org/decidim_roadmap/MeetingCalendar> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/MeetingCalendar> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Container> .
+<http://ontology.decidim.org/decidim_roadmap/MeetingCalendar> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/container_of> .
+_:genid20 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Meeting> .
+<http://ontology.decidim.org/decidim_roadmap/MeetingCalendar> <http://www.w3.org/2000/01/rdf-schema#comment> "A MeetingCalendar is a group of meetings associated to a given ParticipationSpace. \n\nLike a Workshop, it is a ParticipationFunctionality of kind Container, that includes Item of kind Meeting; however, in this case events may typically span over a long period of time, be located in different places and not be related to each other."@en .
+<http://ontology.decidim.org/decidim_roadmap/MeetingCalendar> <http://www.w3.org/2000/01/rdf-schema#label> "Meeting calendar"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Moderator
+<http://ontology.decidim.org/decidim_roadmap/Moderator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Moderator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Collaborator> .
+<http://ontology.decidim.org/decidim_roadmap/Moderator> <http://www.w3.org/2000/01/rdf-schema#comment> "The role of Moderator attributes to a RegisteredParticipant the same rights as a Collaborator for accessing information, plus the possibility of managing ParticipationArtifacts within the role's scope (for example, they can assign a status to a Proposal, and provide an official response)."@en .
+<http://ontology.decidim.org/decidim_roadmap/Moderator> <http://www.w3.org/2000/01/rdf-schema#label> "Moderator"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/NestedComment
+<http://ontology.decidim.org/decidim_roadmap/NestedComment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/NestedComment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Comment> .
+<http://ontology.decidim.org/decidim_roadmap/NestedComment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/reply_of> .
+_:genid21 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/Comment> .
+<http://ontology.decidim.org/decidim_roadmap/NestedComment> <http://www.w3.org/2000/01/rdf-schema#comment> "A comment that replies to another comment."@en .
+<http://ontology.decidim.org/decidim_roadmap/NestedComment> <http://www.w3.org/2000/01/rdf-schema#label> "Nested comment"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Newsletter
+<http://ontology.decidim.org/decidim_roadmap/Newsletter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Newsletter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> .
+<http://ontology.decidim.org/decidim_roadmap/Newsletter> <http://www.w3.org/2000/01/rdf-schema#comment> "A Newsletter allows to broadcast messages to all the RegisteredParticipants associated to a ParticipationPlatform or to a specific ParticipationSpace."@en .
+<http://ontology.decidim.org/decidim_roadmap/Newsletter> <http://www.w3.org/2000/01/rdf-schema#label> "Newsletter"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/OfficialAccount
+<http://ontology.decidim.org/decidim_roadmap/OfficialAccount> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/OfficialAccount> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> .
+<http://ontology.decidim.org/decidim_roadmap/OfficialAccount> <http://www.w3.org/2000/01/rdf-schema#comment> "A verified person whose account name has also been verified to correspond to the real name."@en .
+<http://ontology.decidim.org/decidim_roadmap/OfficialAccount> <http://www.w3.org/2000/01/rdf-schema#label> "Official account" .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Organization
+<http://ontology.decidim.org/decidim_roadmap/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#Agent> .
+<http://ontology.decidim.org/decidim_roadmap/Organization> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/Person> .
+<http://ontology.decidim.org/decidim_roadmap/Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "An organized group of people with a collective purpose. Specific subclasses represent the case of groups of registered participants (Group), and the organization promoting a ParticipationPlatform or a ParticipationSpace (Sovereign organization)."@en .
+<http://ontology.decidim.org/decidim_roadmap/Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Page
+<http://ontology.decidim.org/decidim_roadmap/Page> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Page> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> .
+<http://ontology.decidim.org/decidim_roadmap/Page> <http://www.w3.org/2000/01/rdf-schema#comment> "This ParticipationFunctionality allows to create informative pages with enriched text, images or videos."@en .
+<http://ontology.decidim.org/decidim_roadmap/Page> <http://www.w3.org/2000/01/rdf-schema#label> "Page"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact
+<http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "General class including the various elements that allow democratic participation in Decidim: ParticipationPlatforms, ParticipationSpaces (such as Participation processes or Assemblies), ParticipationFunctionalities (such as Debates, Surveys or Votations), and ParticipationItems (such as individual proposals, meetings or comments)."@en .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Participation artifact"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality
+<http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/functionality_of> .
+_:genid22 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_configurator> .
+_:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Configurator> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> <http://www.w3.org/2000/01/rdf-schema#comment> "This class includes the different functionalitites that can be added to a ParticipationSpace by RegisteredParticipants having administrative role to configure it. \n\nEach ParticipationFunctionality has to be linked to at least one participationSpace it belongs to, through the property functionality_of.\nFurthermore, a ParticipationFunctionality needs to have a Configurator that allows its configuration by participants having the permissions to do so.\n\nSome functionalitites represent one single element that is added to the ParticipationSpace, such as a Page, a Votation or a Survey, while other functionalities are elements that contain participationItems, such as Proposals, BudgetedProposals, Meetings or Comments; such functionalitties that contain ParticipationItems are defined as ParticipationContainers.\n\nWhile some functionalities are general and can belong to any kind of ParticipationSpace, such as a Page, a Blog or a Debate, other are specific to a certain kind of participationSpace. E.g., a WorkingGroup can only belong to an Assembly. In the latter case, the range of the property functionality_of for that particular ParticipationFunctionality is restrictetd to the kind of space it can belong to."@en .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> <http://www.w3.org/2000/01/rdf-schema#label> "Participation functionality"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/ParticipationItem
+<http://ontology.decidim.org/decidim_roadmap/ParticipationItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationItem> <http://www.w3.org/2000/01/rdf-schema#comment> "This general class represents all individual items within a participation space such as Proposals, Comments, meetings, Blog posts.\n\nItems are typically contained in some ParticipationContainer associated with a ParticipationSpace, and different kinds of Items are typically contained in different kinds of containers. For example, Bog posts in Blogs, Proposals in ProposalContainers, Meetings in Workshops or MeetingCalendars, and so on."@en .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationItem> <http://www.w3.org/2000/01/rdf-schema#label> "Participation item"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform
+<http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_promoter> .
+_:genid24 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> <http://www.w3.org/2000/01/rdf-schema#comment> "This class represent instances of a participation platform. \n\nIt can include different kinds of ParticipationSpaces, such as Assemblies, Processes, Consultations or Initiatives; all ParticipationArtifacts ultimately relate to some platform."@en .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> <http://www.w3.org/2000/01/rdf-schema#label> "Participation platform"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/ParticipativeBudget
+<http://ontology.decidim.org/decidim_roadmap/ParticipativeBudget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipativeBudget> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Container> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipativeBudget> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/container_of> .
+_:genid25 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/BudgetedProject> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipativeBudget> <http://www.w3.org/2000/01/rdf-schema#comment> "This component allows participants to collectively define a budget by prioritizing budgeted projects.\n\nIt is a ParticipationFunctionality of kind Container, and includes Items of kind BudgetedProposal."@en .
+<http://ontology.decidim.org/decidim_roadmap/ParticipativeBudget> <http://www.w3.org/2000/01/rdf-schema#label> "Participative budget"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/ParticipativeText
+<http://ontology.decidim.org/decidim_roadmap/ParticipativeText> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipativeText> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ProposalContainer> .
+<http://ontology.decidim.org/decidim_roadmap/ParticipativeText> <http://www.w3.org/2000/01/rdf-schema#comment> "This functionality allows participants to collaboratively redact a text as a collection of Proposals. Collaborative editing emerges from interaction of participants with the Proposals that compose the text. \n\nThis functionality is a special kind of ProposalContainer, that composes proposals within a unified text, or decomposes a text into various proposals that can be discussed and prioritized separately.\n\nA ParticipativeText is a Functionality of kind Container, that includes Items of kind Proposal."@en .
+<http://ontology.decidim.org/decidim_roadmap/ParticipativeText> <http://www.w3.org/2000/01/rdf-schema#label> "Participative text"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Person
+<http://ontology.decidim.org/decidim_roadmap/Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#Agent> .
+<http://ontology.decidim.org/decidim_roadmap/Person> <http://www.w3.org/2000/01/rdf-schema#comment> "General class that represents any person as an individual agent, opposed to collective agents (Organizations)."@en .
+<http://ontology.decidim.org/decidim_roadmap/Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Phase
+<http://ontology.decidim.org/decidim_roadmap/Phase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Phase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> .
+<http://ontology.decidim.org/decidim_roadmap/Phase> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/phase_of> .
+_:genid26 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid26 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/Process> .
+<http://ontology.decidim.org/decidim_roadmap/Phase> <http://www.w3.org/2000/01/rdf-schema#comment> "This functionality allows the administrators of a Process to design and different phases in which the process is divided, with a start and an end date, and with different actions and permissions for each phase."@en .
+<http://ontology.decidim.org/decidim_roadmap/Phase> <http://www.w3.org/2000/01/rdf-schema#label> "Phase"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Process
+<http://ontology.decidim.org/decidim_roadmap/Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> .
+<http://ontology.decidim.org/decidim_roadmap/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_promoter> .
+_:genid27 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> .
+<http://ontology.decidim.org/decidim_roadmap/Process> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/ProcessGroup> .
+<http://ontology.decidim.org/decidim_roadmap/Process> <http://www.w3.org/2000/01/rdf-schema#comment> "A Process is a ParticipationSpace that allows participants to interact with one another in different phases in a collective decision making effort.\n\nA Process is promoted by a SovereignOrganization and can contain in different phases different kinds of functionalities, such as Debates, MeetingCalendars, ParticipatoryBudgets or Accountability."@en .
+<http://ontology.decidim.org/decidim_roadmap/Process> <http://www.w3.org/2000/01/rdf-schema#label> "Process"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/ProcessGroup
+<http://ontology.decidim.org/decidim_roadmap/ProcessGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/ProcessGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> .
+<http://ontology.decidim.org/decidim_roadmap/ProcessGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_promoter> .
+_:genid28 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> .
+<http://ontology.decidim.org/decidim_roadmap/ProcessGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "A GroupOfProcesses groups together different processes promoted by the same SovereignOrganization."@en .
+<http://ontology.decidim.org/decidim_roadmap/ProcessGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Process group"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Project
+<http://ontology.decidim.org/decidim_roadmap/Project> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/derives_from> .
+_:genid29 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Result> .
+<http://ontology.decidim.org/decidim_roadmap/Project> <http://www.w3.org/2000/01/rdf-schema#comment> "A Project is an Item that represents the implementation of some Result, in turn associated with some accepted Proposal.\n\nIt is connected to some Result through the property derived_from, and Participants can monitor its state of execution."@en .
+<http://ontology.decidim.org/decidim_roadmap/Project> <http://www.w3.org/2000/01/rdf-schema#label> "Project"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Promoter
+<http://ontology.decidim.org/decidim_roadmap/Promoter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Promoter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Role> .
+<http://ontology.decidim.org/decidim_roadmap/Promoter> <http://www.w3.org/2000/01/rdf-schema#comment> "A RegisteredParticipant can have the role of Promoter with respect to a ParticipationArtifact they promote. For example, a SovereignOrganization can be the promoter of a ParticipationPlatform or ParticipationSpace, and a RegisteredParticipant can be the Promoter of an Initiative."@en .
+<http://ontology.decidim.org/decidim_roadmap/Promoter> <http://www.w3.org/2000/01/rdf-schema#label> "Promoter"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Proposal
+<http://ontology.decidim.org/decidim_roadmap/Proposal> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Proposal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/AuthoredItem> .
+<http://ontology.decidim.org/decidim_roadmap/Proposal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_container> .
+_:genid30 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid30 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/ProposalContainer> .
+<http://ontology.decidim.org/decidim_roadmap/Proposal> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_creator> .
+_:genid31 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid31 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/Proposal> <http://www.w3.org/2000/01/rdf-schema#comment> "Proposals are ParticipationItems that can be authored by different kinds of RegisteredParticipants, and can receive support from other VerifiedParticipants. Proposals are moderated and can be rejected, or accepted and turned into Results and Projects."@en .
+<http://ontology.decidim.org/decidim_roadmap/Proposal> <http://www.w3.org/2000/01/rdf-schema#label> "Proposal"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/ProposalContainer
+<http://ontology.decidim.org/decidim_roadmap/ProposalContainer> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/ProposalContainer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Container> .
+<http://ontology.decidim.org/decidim_roadmap/ProposalContainer> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/container_of> .
+_:genid32 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/ProposalContainer> <http://www.w3.org/2000/01/rdf-schema#comment> "This functionality allows RegisteredParticipants to create Proposals and comment and support proposals created by others.\n\nIt is a ParticipationFunctionality of kind Container, and includes Items of kind Proposal."@en .
+<http://ontology.decidim.org/decidim_roadmap/ProposalContainer> <http://www.w3.org/2000/01/rdf-schema#label> "Proposal container"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/ProposalIncubator
+<http://ontology.decidim.org/decidim_roadmap/ProposalIncubator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/ProposalIncubator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Container> .
+<http://ontology.decidim.org/decidim_roadmap/ProposalIncubator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/container_of> .
+_:genid33 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/ProposalIncubator> <http://www.w3.org/2000/01/rdf-schema#comment> "A ProposalIncubator allows RegistereParticipants to create Proposal drafts, and collaborate with each other in a preliminary phase before presenting proposals for gathering support to them.\n\nA ProposalIncubator is a Functionality of kind Container, that includes Items of kind \"Proposal\"."@en .
+<http://ontology.decidim.org/decidim_roadmap/ProposalIncubator> <http://www.w3.org/2000/01/rdf-schema#label> "Proposal incubator"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/RegisteredPerson
+<http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Person> .
+<http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "A RegisteredParticipant who is an individual Person, as opposed to collective accounts representing Organizations or Groups of participants."@en .
+<http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> <http://www.w3.org/2000/01/rdf-schema#label> "Registered person"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Result
+<http://ontology.decidim.org/decidim_roadmap/Result> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Result> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/Result> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid34 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/result_of> .
+_:genid34 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Proposal> .
+<http://ontology.decidim.org/decidim_roadmap/Result> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid35 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_container> .
+_:genid35 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid35 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/AccountabilityContainer> .
+<http://ontology.decidim.org/decidim_roadmap/Result> <http://www.w3.org/2000/01/rdf-schema#comment> "This kind of ParticipationItem allows Participants to trace and monitor the outcomes of a participative process. \n\nA Result belongs to an AccountabilityContainer, within a ParticipationSpace.\n\nEach Result is associated to one or more accepted Proposals, and to one or more Projects derived from it. Results are the conjunction between Proposals and Projects that implement them."@en .
+<http://ontology.decidim.org/decidim_roadmap/Result> <http://www.w3.org/2000/01/rdf-schema#label> "Result"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Role
+<http://ontology.decidim.org/decidim_roadmap/Role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Attribute> .
+<http://ontology.decidim.org/decidim_roadmap/Role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid36 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_scope> .
+_:genid36 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/Role> <http://www.w3.org/2000/01/rdf-schema#comment> "Abstract class to represent that a given participant has a certain function in the scope of some ParticipationArtifact."@en .
+<http://ontology.decidim.org/decidim_roadmap/Role> <http://www.w3.org/2000/01/rdf-schema#label> "Role"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Scope
+<http://ontology.decidim.org/decidim_roadmap/Scope> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Scope> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Attribute> .
+<http://ontology.decidim.org/decidim_roadmap/Scope> <http://www.w3.org/2000/01/rdf-schema#comment> "A scope is an Attribute that delimits a ParticipationSpace within a certain geographical area (TerritorialScope subclass) or topic/sector (SectorialScope)."@en .
+<http://ontology.decidim.org/decidim_roadmap/Scope> <http://www.w3.org/2000/01/rdf-schema#label> "Scope"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/SearchEngine
+<http://ontology.decidim.org/decidim_roadmap/SearchEngine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/SearchEngine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> .
+<http://ontology.decidim.org/decidim_roadmap/SearchEngine> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/belong_to> .
+_:genid37 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid37 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> .
+<http://ontology.decidim.org/decidim_roadmap/SearchEngine> <http://www.w3.org/2000/01/rdf-schema#comment> "A SearchEngine allows participants to search for all the indexable content in a Platform or specific Process or Functionality."@en .
+<http://ontology.decidim.org/decidim_roadmap/SearchEngine> <http://www.w3.org/2000/01/rdf-schema#label> "Search engine"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/SectorialScope
+<http://ontology.decidim.org/decidim_roadmap/SectorialScope> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/SectorialScope> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Scope> .
+<http://ontology.decidim.org/decidim_roadmap/SectorialScope> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/TerritorialScope> .
+<http://ontology.decidim.org/decidim_roadmap/SectorialScope> <http://www.w3.org/2000/01/rdf-schema#comment> "A Scope that delimits a ParticipationProcess within a certain topic or sector."@en .
+<http://ontology.decidim.org/decidim_roadmap/SectorialScope> <http://www.w3.org/2000/01/rdf-schema#label> "Sectorial scope"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/SovereignOrganization
+<http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Organization> .
+<http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "A SovereignOrganization is an Organization able to take decision and make them effective, that promotes a ParticipationPlatform or a ParticipationSpace to involve participants in collective decision making."@en .
+<http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "Sovereign organization"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Supporter
+<http://ontology.decidim.org/decidim_roadmap/Supporter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Supporter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Role> .
+<http://ontology.decidim.org/decidim_roadmap/Supporter> <http://www.w3.org/2000/01/rdf-schema#comment> "A registered Participant can have the Role of Supporter with respect to some ParticipationItem they support, such as a Proposal or a BudgetedProposal."@en .
+<http://ontology.decidim.org/decidim_roadmap/Supporter> <http://www.w3.org/2000/01/rdf-schema#label> "Supporter"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Survey
+<http://ontology.decidim.org/decidim_roadmap/Survey> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Survey> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> .
+<http://ontology.decidim.org/decidim_roadmap/Survey> <http://www.w3.org/2000/01/rdf-schema#comment> "This functionality allws Administrators to design, create and configure surveys associated to some ParticipationSpace, with multiple questions that can be answered by RegisteredParticipants."@en .
+<http://ontology.decidim.org/decidim_roadmap/Survey> <http://www.w3.org/2000/01/rdf-schema#label> "Survey"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/SysAdmin
+<http://ontology.decidim.org/decidim_roadmap/SysAdmin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/SysAdmin> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Administrator> .
+<http://ontology.decidim.org/decidim_roadmap/SysAdmin> <http://www.w3.org/2000/01/rdf-schema#comment> "A RegisteredParticipant having the role of SysAdmin (Sytem administrator) has rights to access and modify any aspect of the platform. This includes granting any administration role to other RegisteredParticipants."@en .
+<http://ontology.decidim.org/decidim_roadmap/SysAdmin> <http://www.w3.org/2000/01/rdf-schema#label> "Sys admin"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/TerritorialScope
+<http://ontology.decidim.org/decidim_roadmap/TerritorialScope> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/TerritorialScope> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Scope> .
+<http://ontology.decidim.org/decidim_roadmap/TerritorialScope> <http://www.w3.org/2000/01/rdf-schema#comment> "A Scope that delimits a ParticipationProcess within a certain geographical area, such as a neighborhood, district, city, province, region or country."@en .
+<http://ontology.decidim.org/decidim_roadmap/TerritorialScope> <http://www.w3.org/2000/01/rdf-schema#label> "Territorial scope"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Thread
+<http://ontology.decidim.org/decidim_roadmap/Thread> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Thread> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> .
+<http://ontology.decidim.org/decidim_roadmap/Thread> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid38 .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_first_comment> .
+_:genid38 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid38 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/FirstLevelComment> .
+<http://ontology.decidim.org/decidim_roadmap/Thread> <http://www.w3.org/2000/01/rdf-schema#comment> "A Thread is ParticipationItem that is composed of different comments, and is started by a FirstLevelComment that opens the conversation."@en .
+<http://ontology.decidim.org/decidim_roadmap/Thread> <http://www.w3.org/2000/01/rdf-schema#label> "Thread"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/VerifiedGroup
+<http://ontology.decidim.org/decidim_roadmap/VerifiedGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/VerifiedGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Group> .
+<http://ontology.decidim.org/decidim_roadmap/VerifiedGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/VerifiedGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "A Group of Participants whose account has been verified to correspond to the Organization or collective entity it represents."@en .
+<http://ontology.decidim.org/decidim_roadmap/VerifiedGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Verified group"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/VerifiedPerson
+<http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> .
+<http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "A RegisteredPerson whose identity has been verified to correspond to a citizen or Organization member with right to vote. Although the identity of a VerifiedParticipant has been verified, it is in general not disclosed; the OfficialAccount subclass represents VerifiedParticipants whose real (verified) identity is publicly disclosed.\n\nSome actions may only be performed by VerifiedPersons, such as supporting a Proposal." .
+<http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/2000/01/rdf-schema#label> "Verified person"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/VisitingParticipant
+<http://ontology.decidim.org/decidim_roadmap/VisitingParticipant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/VisitingParticipant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#Participant> .
+<http://ontology.decidim.org/decidim_roadmap/VisitingParticipant> <http://www.w3.org/2000/01/rdf-schema#comment> "Any participant who visits the platform without logging into a registered account.\n\nVisiting participants can only access content, but cannot modify it or perform actions."@en .
+<http://ontology.decidim.org/decidim_roadmap/VisitingParticipant> <http://www.w3.org/2000/01/rdf-schema#label> "Visiting participant"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Votation
+<http://ontology.decidim.org/decidim_roadmap/Votation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Votation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> .
+<http://ontology.decidim.org/decidim_roadmap/Votation> <http://www.w3.org/2000/01/rdf-schema#comment> "This functionality represents a votation system associated to a ParticipationSpace.\n\nDifferent votation systems are possible and can be configured by the Administrators."@en .
+<http://ontology.decidim.org/decidim_roadmap/Votation> <http://www.w3.org/2000/01/rdf-schema#label> "Votation"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/WorkingGroup
+<http://ontology.decidim.org/decidim_roadmap/WorkingGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Group> .
+<http://ontology.decidim.org/decidim_roadmap/WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> .
+<http://ontology.decidim.org/decidim_roadmap/WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid39 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/subgroup_of> .
+_:genid39 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Assembly> .
+<http://ontology.decidim.org/decidim_roadmap/WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "A WorkingGroup is a Group of participants that collaborate on a specific topic or goal within an Assembly, and interacts with the Assembly it belongs to."@en .
+<http://ontology.decidim.org/decidim_roadmap/WorkingGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Working group"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/Workshop
+<http://ontology.decidim.org/decidim_roadmap/Workshop> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/Workshop> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Container> .
+<http://ontology.decidim.org/decidim_roadmap/Workshop> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid40 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/container_of> .
+_:genid40 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Meeting> .
+<http://ontology.decidim.org/decidim_roadmap/Workshop> <http://www.w3.org/2000/01/rdf-schema#comment> "A Workshop is a group of meetings with some specific characteristics, such as an interactive descargable program, attendance certificates, videos and materials, and links to coverage of the event in digital media and social media.\n\nA Workshop is a ParticipationFunctionality of kind Container, that includes one or more Meetings."@en .
+<http://ontology.decidim.org/decidim_roadmap/Workshop> <http://www.w3.org/2000/01/rdf-schema#label> "Workshop"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/#Agent
+<http://ontology.decidim.org/decidim_roadmap/#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/#Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity that can perform actions. It can be an individual (Person) or a collective (Organization)."@en .
+<http://ontology.decidim.org/decidim_roadmap/#Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Agent"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/#Participant
+<http://ontology.decidim.org/decidim_roadmap/#Participant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/#Participant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#Agent> .
+<http://ontology.decidim.org/decidim_roadmap/#Participant> <http://www.w3.org/2000/01/rdf-schema#comment> "General class that includes any individual or collective entity participating in a participation space"@en .
+<http://ontology.decidim.org/decidim_roadmap/#Participant> <http://www.w3.org/2000/01/rdf-schema#label> "Participant"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace
+<http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid41 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_configurator> .
+_:genid41 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Configurator> .
+<http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid42 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_promoter> .
+_:genid42 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/#Agent> .
+<http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid43 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_scope> .
+_:genid43 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/SectorialScope> .
+<http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid44 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_scope> .
+_:genid44 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/TerritorialScope> .
+<http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid45 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_platform> .
+_:genid45 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid45 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> .
+<http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> <http://www.w3.org/2000/01/rdf-schema#comment> "ParticipationSpaces are the frameworks in which participation takes place. They represent the channels to which the citizens or the members of an organization can articulate collective needs and proposals, and take decisions.\n\nThere are different kinds of spaces: Processes, Initiatives, Assemblies, Consultations. Additionally, ProcessGroups are spaces that include and group together more than one Process.\n\nA ParticipationSpace is vinculated to an Agent that promotes it, usually a SovereignOrganization that aims to involve its members or the citizenry in a collective decision making effort. \n\nA ParticipationSpace is specified by a TerritorialScope and a SectorialScope that delimit its scope.\n\nA ParticipationSpace has some Configurator that allows its configuration and management by RegisteredParticipants having an administrative role that grants them permissions over the ParticipationSpace."@en .
+<http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> <http://www.w3.org/2000/01/rdf-schema#label> "Participation space"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant
+<http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#Participant> .
+<http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> <http://www.w3.org/2000/01/rdf-schema#comment> "A participant corresponding to a registered account in the platform."@en .
+<http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> <http://www.w3.org/2000/01/rdf-schema#label> "Registered participant"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant
+<http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> <http://www.w3.org/2000/01/rdf-schema#comment> "RegisteredParticipant whose account has been verified to correspond to the real world entity it represents, be it an individual person (VerifiedPerson subclass) or a group (VerifiedGroup subclass)." .
+<http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> <http://www.w3.org/2000/01/rdf-schema#label> "Verified participant"@en .
+# 
+# Generated by the OWL API (version 5.1.0) https://github.com/owlcs/owlapi/
