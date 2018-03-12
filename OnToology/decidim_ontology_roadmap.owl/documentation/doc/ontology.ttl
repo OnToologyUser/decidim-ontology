@@ -339,6 +339,15 @@ It is inverse property of acts_on, and it has range Agent."""@en ;
                rdfs:label "has moderator"@en .
 
 
+###  http://ontology.decidim.org/decidim_roadmap/has_participant
+:has_participant rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :has_actor ;
+                 owl:inverseOf :participant_of ;
+                 rdfs:domain :ParticipationArtifact ;
+                 rdfs:range <http://ontology.decidim.org/decidim_roadmap/#Agent> ;
+                 rdfs:label "has participant"@en .
+
+
 ###  http://ontology.decidim.org/decidim_roadmap/has_phase
 :has_phase rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :includes ;
@@ -488,6 +497,14 @@ It is inverse property of belongs_to."""@en ;
               rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
               rdfs:range :ParticipationArtifact ;
               rdfs:label "moderator of"@en .
+
+
+###  http://ontology.decidim.org/decidim_roadmap/participant_of
+:participant_of rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :acts_on ;
+                rdfs:domain <http://ontology.decidim.org/decidim_roadmap/#Agent> ;
+                rdfs:range :ParticipationArtifact ;
+                rdfs:label "participant of"@en .
 
 
 ###  http://ontology.decidim.org/decidim_roadmap/phase_of
@@ -903,11 +920,11 @@ A Debate is a ParticipationFunctionality of kind Container, that includes Items 
 ###  http://ontology.decidim.org/decidim_roadmap/Group
 :Group rdf:type owl:Class ;
        rdfs:subClassOf :Organization ,
-                       <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :has_member ;
                          owl:someValuesFrom <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant>
                        ] ;
+       owl:disjointWith :RegisteredPerson ;
        rdfs:comment "A collective account corresponding to a group of registered participants."@en ;
        rdfs:label "Group"@en .
 
@@ -1196,10 +1213,15 @@ A ProposalIncubator is a Functionality of kind Container, that includes Items of
                    rdfs:label "Proposal incubator"@en .
 
 
+###  http://ontology.decidim.org/decidim_roadmap/RegisteredGroup
+:RegisteredGroup rdf:type owl:Class ;
+                 rdfs:subClassOf <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+                 rdfs:label "Registered group"@en .
+
+
 ###  http://ontology.decidim.org/decidim_roadmap/RegisteredPerson
 :RegisteredPerson rdf:type owl:Class ;
-                  rdfs:subClassOf :Person ,
-                                  <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
+                  rdfs:subClassOf <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> ;
                   rdfs:comment "A RegisteredParticipant who is an individual Person, as opposed to collective accounts representing Organizations or Groups of participants."@en ;
                   rdfs:label "Registered person"@en .
 
@@ -1264,8 +1286,8 @@ Each Result is associated to one or more accepted Proposals, and to one or more 
 
 ###  http://ontology.decidim.org/decidim_roadmap/SovereignOrganization
 :SovereignOrganization rdf:type owl:Class ;
-                       rdfs:subClassOf :Organization ;
-                       rdfs:comment "A SovereignOrganization is an Organization able to take decision and make them effective, that promotes a ParticipationPlatform or a ParticipationSpace to involve participants in collective decision making."@en ;
+                       rdfs:subClassOf :Role ;
+                       rdfs:comment "A SovereignOrganization is the role that an Organization able to take decision and make them effective may assume, promoting a ParticipationPlatform or a ParticipationSpace to involve participants in collective decision making."@en ;
                        rdfs:label "Sovereign organization"@en .
 
 
@@ -1311,7 +1333,7 @@ Each Result is associated to one or more accepted Proposals, and to one or more 
 
 ###  http://ontology.decidim.org/decidim_roadmap/VerifiedGroup
 :VerifiedGroup rdf:type owl:Class ;
-               rdfs:subClassOf :Group ,
+               rdfs:subClassOf :RegisteredGroup ,
                                <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> ;
                rdfs:comment "A Group of Participants whose account has been verified to correspond to the Organization or collective entity it represents."@en ;
                rdfs:label "Verified group"@en .
@@ -1319,9 +1341,8 @@ Each Result is associated to one or more accepted Proposals, and to one or more 
 
 ###  http://ontology.decidim.org/decidim_roadmap/VerifiedPerson
 :VerifiedPerson rdf:type owl:Class ;
-                rdfs:subClassOf :RegisteredPerson ,
-                                <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> ;
-                rdfs:comment """A RegisteredPerson whose identity has been verified to correspond to a citizen or Organization member with right to vote. Although the identity of a VerifiedParticipant has been verified, it is in general not disclosed; the OfficialAccount subclass represents VerifiedParticipants whose real (verified) identity is publicly disclosed.
+                rdfs:subClassOf <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> ;
+                rdfs:comment """A RegisteredParticipant whose identity has been verified to correspond to a citizen (or Organization member) with right to vote. Although the identity of a VerifiedParticipant has been verified, it is in general not disclosed; the OfficialAccount subclass represents VerifiedParticipants whose real (verified) identity is publicly disclosed.
 
 Some actions may only be performed by VerifiedPersons, such as supporting a Proposal."""^^xsd:string ;
                 rdfs:label "Verified person"@en .
@@ -1378,7 +1399,7 @@ A Workshop is a ParticipationFunctionality of kind Container, that includes one 
 
 ###  http://ontology.decidim.org/decidim_roadmap/#Participant
 <http://ontology.decidim.org/decidim_roadmap/#Participant> rdf:type owl:Class ;
-                                                           rdfs:subClassOf <http://ontology.decidim.org/decidim_roadmap/#Agent> ;
+                                                           rdfs:subClassOf :Role ;
                                                            rdfs:comment "General class that includes any individual or collective entity participating in a participation space"@en ;
                                                            rdfs:label "Participant"@en .
 

@@ -5,9 +5,10 @@ node [shape = rectangle, color="orange"]; "base:SectorialScope" "base:Accountabi
 	"base:similar_to" -> "base:related_to" [ label = "rdfs:subPropertyOf" ];
 	"base:" -> "http://ontology.decidim.org/decidim_roadmap/1.0.0" [ label = "owl:versionIRI" ];
 	"base:subgroup_of" -> "base:belong_to" [ label = "rdfs:subPropertyOf" ];
-	"base:follower_of" -> "base:acts_on" [ label = "rdfs:subPropertyOf" ];
 	"base:functionality_of" -> "base:belong_to" [ label = "rdfs:subPropertyOf" ];
+	"base:follower_of" -> "base:acts_on" [ label = "rdfs:subPropertyOf" ];
 	"base:has_member" -> "base:includes" [ label = "rdfs:subPropertyOf" ];
+	"base:participant_of" -> "base:acts_on" [ label = "rdfs:subPropertyOf" ];
 	"base:grants" -> "base:acts_on" [ label = "rdfs:subPropertyOf" ];
 	"base:withdrawn_by" -> "base:has_actor" [ label = "rdfs:subPropertyOf" ];
 	"base:reported_by" -> "base:has_actor" [ label = "rdfs:subPropertyOf" ];
@@ -32,6 +33,7 @@ node [shape = rectangle, color="orange"]; "base:SectorialScope" "base:Accountabi
 	"base:reports" -> "base:acts_on" [ label = "rdfs:subPropertyOf" ];
 	"base:platform_of" -> "base:includes" [ label = "rdfs:subPropertyOf" ];
 	"base:has_administrator" -> "base:has_actor" [ label = "rdfs:subPropertyOf" ];
+	"base:has_participant" -> "base:has_actor" [ label = "rdfs:subPropertyOf" ];
 	"base:has_reply" -> "base:referred_by" [ label = "rdfs:subPropertyOf" ];
 	"base:references" -> "base:refers_to" [ label = "rdfs:subPropertyOf" ];
 	"base:Organization" -> "base:Person" [ label = "owl:disjointWith" ];
@@ -49,7 +51,7 @@ node [shape = rectangle, color="orange"]; "base:SectorialScope" "base:Accountabi
 	"base:supporter_of" -> "base:acts_on" [ label = "rdfs:subPropertyOf" ];
 	"base:role_scope_of" -> "base:specifies" [ label = "rdfs:subPropertyOf" ];
 	"base:configurator_of" -> "base:belong_to" [ label = "rdfs:subPropertyOf" ];
-	"NULL" -> "base:Process" [ label = "owl:onClass" ];
+	"NULL" -> "base:amendment_of" [ label = "owl:onProperty" ];
 	"NULL" -> "base:Proposal" [ label = "owl:onClass" ];
 	"NULL" -> "base:ParticipationPlatform" [ label = "owl:onClass" ];
 	"NULL" -> "base:initiative_of" [ label = "owl:onProperty" ];
@@ -95,7 +97,7 @@ node [shape = rectangle, color="orange"]; "base:SectorialScope" "base:Accountabi
 	"NULL" -> "http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace" [ label = "owl:someValuesFrom" ];
 	"NULL" -> "base:configurator_of" [ label = "owl:onProperty" ];
 	"NULL" -> "base:SectorialScope" [ label = "owl:someValuesFrom" ];
-	"NULL" -> "base:amendment_of" [ label = "owl:onProperty" ];
+	"NULL" -> "base:Process" [ label = "owl:onClass" ];
 	"NULL" -> "base:has_scope" [ label = "owl:onProperty" ];
 	"base:result_of" -> "base:refers_to" [ label = "rdfs:subPropertyOf" ];
 	"base:scope_of" -> "base:specifies" [ label = "rdfs:subPropertyOf" ];
@@ -128,11 +130,14 @@ node [shape = rectangle, color="orange"]; "base:SectorialScope" "base:Accountabi
 	"base:referenced_by" -> "base:referred_by" [ label = "rdfs:subPropertyOf" ];
 	"base:has_initiative" -> "base:belong_to" [ label = "rdfs:subPropertyOf" ];
 	"base:has_creator" -> "base:has_actor" [ label = "rdfs:subPropertyOf" ];
+	"base:Group" -> "base:RegisteredPerson" [ label = "owl:disjointWith" ];
 	"base:has_collaborator" -> "base:has_actor" [ label = "rdfs:subPropertyOf" ];
 	"base:mentions" -> "base:refers_to" [ label = "rdfs:subPropertyOf" ];
 	"base:has_phase" -> "base:includes" [ label = "rdfs:subPropertyOf" ];
+	"http://ontology.decidim.org/decidim_roadmap/#Agent" -> "base:ParticipationArtifact" [ label = "base:participant_of" ];
 	"base:Comment" -> "http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant" [ label = "base:mentions" ];
 	"base:Process" -> "base:Phase" [ label = "base:has_phase" ];
+	"base:ParticipationArtifact" -> "http://ontology.decidim.org/decidim_roadmap/#Agent" [ label = "base:has_participant" ];
 	"http://ontology.decidim.org/decidim_roadmap/#Agent" -> "owl:Thing" [ label = "base:acts_on" ];
 	"base:Result" -> "base:Project" [ label = "base:derives" ];
 	"base:ParticipationItem" -> "http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant" [ label = "base:has_creator" ];

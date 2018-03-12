@@ -188,6 +188,10 @@ This section provides details for each class and property defined by Decidim Ont
             title="http://ontology.decidim.org/decidim_roadmap/ProposalIncubator">Proposal incubator</a>
       </li>
       <li>
+         <a href="#RegisteredGroup"
+            title="http://ontology.decidim.org/decidim_roadmap/RegisteredGroup">Registered group</a>
+      </li>
+      <li>
          <a href="#RegisteredParticipant"
             title="http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant">Registered participant</a>
       </li>
@@ -338,8 +342,6 @@ It is a ParticipationFunctionality of kind Container, and includes Items of kind
          <dd>
             <a href="#Organization"
                title="http://ontology.decidim.org/decidim_roadmap/Organization">Organization</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Participant"
-               title="http://ontology.decidim.org/decidim_roadmap/#Participant">Participant</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Person"
                title="http://ontology.decidim.org/decidim_roadmap/Person">Person</a>
             <sup class="type-c" title="class">c</sup>
@@ -348,12 +350,16 @@ It is a ParticipationFunctionality of kind Container, and includes Items of kind
          <dd>
             <a href="#acts_on"
                title="http://ontology.decidim.org/decidim_roadmap/acts_on">acts on</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#participant_of"
+               title="http://ontology.decidim.org/decidim_roadmap/participant_of">participant of</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#has_actor"
                title="http://ontology.decidim.org/decidim_roadmap/has_actor">has actor</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_participant"
+               title="http://ontology.decidim.org/decidim_roadmap/has_participant">has participant</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -909,11 +915,6 @@ A Debate is a ParticipationFunctionality of kind Container, that includes Items 
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
-            <a href="#RegisteredParticipant"
-               title="http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant">Registered participant</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dd>
             <a href="#has_member"
                title="http://ontology.decidim.org/decidim_roadmap/has_member">has member</a>
             <sup class="type-op" title="object property">op</sup> 
@@ -926,8 +927,6 @@ A Debate is a ParticipationFunctionality of kind Container, that includes Items 
          <dd>
             <a href="#Assembly"
                title="http://ontology.decidim.org/decidim_roadmap/Assembly">Assembly</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#VerifiedGroup"
-               title="http://ontology.decidim.org/decidim_roadmap/VerifiedGroup">Verified group</a>
             <sup class="type-c" title="class">c</sup>, <a href="#WorkingGroup"
                title="http://ontology.decidim.org/decidim_roadmap/WorkingGroup">Working group</a>
             <sup class="type-c" title="class">c</sup>
@@ -955,6 +954,12 @@ A Debate is a ParticipationFunctionality of kind Container, that includes Items 
             <sup class="type-op" title="object property">op</sup>, <a href="#subgroup_of"
                title="http://ontology.decidim.org/decidim_roadmap/subgroup_of">subgroup of</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#RegisteredPerson"
+               title="http://ontology.decidim.org/decidim_roadmap/RegisteredPerson">Registered person</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -1230,8 +1235,6 @@ Like a Workshop, it is a ParticipationFunctionality of kind Container, that incl
          <dd>
             <a href="#Group"
                title="http://ontology.decidim.org/decidim_roadmap/Group">Group</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#SovereignOrganization"
-               title="http://ontology.decidim.org/decidim_roadmap/SovereignOrganization">Sovereign organization</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is disjoint with</dt>
@@ -1274,8 +1277,8 @@ Like a Workshop, it is a ParticipationFunctionality of kind Container, that incl
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Agent"
-               title="http://ontology.decidim.org/decidim_roadmap/#Agent">Agent</a>
+            <a href="#Role"
+               title="http://ontology.decidim.org/decidim_roadmap/Role">Role</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
@@ -1323,6 +1326,8 @@ Like a Workshop, it is a ParticipationFunctionality of kind Container, that incl
                title="http://ontology.decidim.org/decidim_roadmap/has_configurator">has configurator</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#has_moderator"
                title="http://ontology.decidim.org/decidim_roadmap/has_moderator">has moderator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_participant"
+               title="http://ontology.decidim.org/decidim_roadmap/has_participant">has participant</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#role_scope_of"
                title="http://ontology.decidim.org/decidim_roadmap/role_scope_of">role scope of</a>
             <sup class="type-op" title="object property">op</sup>
@@ -1337,6 +1342,8 @@ Like a Workshop, it is a ParticipationFunctionality of kind Container, that incl
                title="http://ontology.decidim.org/decidim_roadmap/has_role_scope">has role scope</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#moderator_of"
                title="http://ontology.decidim.org/decidim_roadmap/moderator_of">moderator of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#participant_of"
+               title="http://ontology.decidim.org/decidim_roadmap/participant_of">participant of</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1768,12 +1775,6 @@ A ParticipativeText is a Functionality of kind Container, that includes Items of
                title="http://ontology.decidim.org/decidim_roadmap/#Agent">Agent</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#RegisteredPerson"
-               title="http://ontology.decidim.org/decidim_roadmap/RegisteredPerson">Registered person</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Organization"
@@ -2115,6 +2116,28 @@ A ProposalIncubator is a Functionality of kind Container, that includes Items of
          </dd>
       </dl>
    </div>
+   <div class="entity" id="RegisteredGroup">
+      <h3>Registered group<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontology.decidim.org/decidim_roadmap/RegisteredGroup</p>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#RegisteredParticipant"
+               title="http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant">Registered participant</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#VerifiedGroup"
+               title="http://ontology.decidim.org/decidim_roadmap/VerifiedGroup">Verified group</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="RegisteredParticipant">
       <h3>Registered participant<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -2134,8 +2157,8 @@ A ProposalIncubator is a Functionality of kind Container, that includes Items of
          </dd>
          <dt>has sub-classes</dt>
          <dd>
-            <a href="#Group"
-               title="http://ontology.decidim.org/decidim_roadmap/Group">Group</a>
+            <a href="#RegisteredGroup"
+               title="http://ontology.decidim.org/decidim_roadmap/RegisteredGroup">Registered group</a>
             <sup class="type-c" title="class">c</sup>, <a href="#RegisteredPerson"
                title="http://ontology.decidim.org/decidim_roadmap/RegisteredPerson">Registered person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#VerifiedParticipant"
@@ -2215,19 +2238,8 @@ A ProposalIncubator is a Functionality of kind Container, that includes Items of
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Person"
-               title="http://ontology.decidim.org/decidim_roadmap/Person">Person</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dd>
             <a href="#RegisteredParticipant"
                title="http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant">Registered participant</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#VerifiedPerson"
-               title="http://ontology.decidim.org/decidim_roadmap/VerifiedPerson">Verified person</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -2243,6 +2255,12 @@ A ProposalIncubator is a Functionality of kind Container, that includes Items of
             <sup class="type-op" title="object property">op</sup>, <a href="#has_supporter"
                title="http://ontology.decidim.org/decidim_roadmap/has_supporter">has supporter</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Group"
+               title="http://ontology.decidim.org/decidim_roadmap/Group">Group</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -2332,8 +2350,12 @@ Each Result is associated to one or more accepted Proposals, and to one or more 
          <dd>
             <a href="#Collaborator"
                title="http://ontology.decidim.org/decidim_roadmap/Collaborator">Collaborator</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Participant"
+               title="http://ontology.decidim.org/decidim_roadmap/#Participant">Participant</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Promoter"
                title="http://ontology.decidim.org/decidim_roadmap/Promoter">Promoter</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#SovereignOrganization"
+               title="http://ontology.decidim.org/decidim_roadmap/SovereignOrganization">Sovereign organization</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Supporter"
                title="http://ontology.decidim.org/decidim_roadmap/Supporter">Supporter</a>
             <sup class="type-c" title="class">c</sup>
@@ -2453,13 +2475,13 @@ Each Result is associated to one or more accepted Proposals, and to one or more 
       <p>
          <strong>IRI:</strong> http://ontology.decidim.org/decidim_roadmap/SovereignOrganization</p>
       <div class="comment">
-         <span class="markdown">A SovereignOrganization is an Organization able to take decision and make them effective, that promotes a ParticipationPlatform or a ParticipationSpace to involve participants in collective decision making.</span>
+         <span class="markdown">A SovereignOrganization is the role that an Organization able to take decision and make them effective may assume, promoting a ParticipationPlatform or a ParticipationSpace to involve participants in collective decision making.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Organization"
-               title="http://ontology.decidim.org/decidim_roadmap/Organization">Organization</a>
+            <a href="#Role"
+               title="http://ontology.decidim.org/decidim_roadmap/Role">Role</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -2598,8 +2620,8 @@ Each Result is associated to one or more accepted Proposals, and to one or more 
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#Group"
-               title="http://ontology.decidim.org/decidim_roadmap/Group">Group</a>
+            <a href="#RegisteredGroup"
+               title="http://ontology.decidim.org/decidim_roadmap/RegisteredGroup">Registered group</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
@@ -2656,17 +2678,12 @@ Each Result is associated to one or more accepted Proposals, and to one or more 
       <p>
          <strong>IRI:</strong> http://ontology.decidim.org/decidim_roadmap/VerifiedPerson</p>
       <div class="comment">
-         <span class="markdown">A RegisteredPerson whose identity has been verified to correspond to a citizen or Organization member with right to vote. Although the identity of a VerifiedParticipant has been verified, it is in general not disclosed; the OfficialAccount subclass represents VerifiedParticipants whose real (verified) identity is publicly disclosed.
+         <span class="markdown">A RegisteredParticipant whose identity has been verified to correspond to a citizen (or Organization member) with right to vote. Although the identity of a VerifiedParticipant has been verified, it is in general not disclosed; the OfficialAccount subclass represents VerifiedParticipants whose real (verified) identity is publicly disclosed.
 
 Some actions may only be performed by VerifiedPersons, such as supporting a Proposal.</span>
       </div>
       <dl class="description">
          <dt>has super-classes</dt>
-         <dd>
-            <a href="#RegisteredPerson"
-               title="http://ontology.decidim.org/decidim_roadmap/RegisteredPerson">Registered person</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
          <dd>
             <a href="#VerifiedParticipant"
                title="http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant">Verified participant</a>
@@ -2937,6 +2954,10 @@ A Workshop is a ParticipationFunctionality of kind Container, that includes one 
             title="http://ontology.decidim.org/decidim_roadmap/has_moderator">has moderator</a>
       </li>
       <li>
+         <a href="#has_participant"
+            title="http://ontology.decidim.org/decidim_roadmap/has_participant">has participant</a>
+      </li>
+      <li>
          <a href="#has_phase"
             title="http://ontology.decidim.org/decidim_roadmap/has_phase">has phase</a>
       </li>
@@ -3003,6 +3024,10 @@ A Workshop is a ParticipationFunctionality of kind Container, that includes one 
       <li>
          <a href="#moderator_of"
             title="http://ontology.decidim.org/decidim_roadmap/moderator_of">moderator of</a>
+      </li>
+      <li>
+         <a href="#participant_of"
+            title="http://ontology.decidim.org/decidim_roadmap/participant_of">participant of</a>
       </li>
       <li>
          <a href="#phase_of"
@@ -3137,6 +3162,8 @@ Inverse property of has_actor and it has domain Agent.</span>
                   title="http://ontology.decidim.org/decidim_roadmap/grants">grants</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#moderator_of"
                   title="http://ontology.decidim.org/decidim_roadmap/moderator_of">moderator of</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#participant_of"
+                  title="http://ontology.decidim.org/decidim_roadmap/participant_of">participant of</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#promoter_of"
                   title="http://ontology.decidim.org/decidim_roadmap/promoter_of">promoter of</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#reports"
@@ -3875,6 +3902,8 @@ It is inverse property of acts_on, and it has range Agent.</span>
                   title="http://ontology.decidim.org/decidim_roadmap/has_follower">has follower</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#has_moderator"
                   title="http://ontology.decidim.org/decidim_roadmap/has_moderator">has moderator</a>
+               <sup class="type-op" title="object property">op</sup>, <a href="#has_participant"
+                  title="http://ontology.decidim.org/decidim_roadmap/has_participant">has participant</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#has_promoter"
                   title="http://ontology.decidim.org/decidim_roadmap/has_promoter">has promoter</a>
                <sup class="type-op" title="object property">op</sup>, <a href="#has_supporter"
@@ -4451,6 +4480,42 @@ It is inverse property of acts_on, and it has range Agent.</span>
             <dd>
                <a href="#moderator_of"
                   title="http://ontology.decidim.org/decidim_roadmap/moderator_of">moderator of</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="has_participant">
+      <h3>has participant<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontology.decidim.org/decidim_roadmap/has_participant</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#has_actor"
+                  title="http://ontology.decidim.org/decidim_roadmap/has_actor">has actor</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#ParticipationArtifact"
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Agent"
+                  title="http://ontology.decidim.org/decidim_roadmap/#Agent">Agent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#participant_of"
+                  title="http://ontology.decidim.org/decidim_roadmap/participant_of">participant of</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -5071,6 +5136,42 @@ It is inverse property of belongs_to.</span>
             <dd>
                <a href="#has_moderator"
                   title="http://ontology.decidim.org/decidim_roadmap/has_moderator">has moderator</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="participant_of">
+      <h3>participant of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontology.decidim.org/decidim_roadmap/participant_of</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#acts_on"
+                  title="http://ontology.decidim.org/decidim_roadmap/acts_on">acts on</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Agent"
+                  title="http://ontology.decidim.org/decidim_roadmap/#Agent">Agent</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#ParticipationArtifact"
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#has_participant"
+                  title="http://ontology.decidim.org/decidim_roadmap/has_participant">has participant</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
