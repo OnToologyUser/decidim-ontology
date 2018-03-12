@@ -117,6 +117,10 @@
       "@id" : "http://ontology.decidim.org/decidim_roadmap/derives_from",
       "@type" : "@id"
     },
+    "participant_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/participant_of",
+      "@type" : "@id"
+    },
     "NestedComment" : {
       "@id" : "http://ontology.decidim.org/decidim_roadmap/NestedComment"
     },
@@ -280,6 +284,10 @@
       "@id" : "http://ontology.decidim.org/decidim_roadmap/has_phase",
       "@type" : "@id"
     },
+    "has_participant" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_participant",
+      "@type" : "@id"
+    },
     "Blog" : {
       "@id" : "http://ontology.decidim.org/decidim_roadmap/Blog"
     },
@@ -408,6 +416,9 @@
     "referred_by" : {
       "@id" : "http://ontology.decidim.org/decidim_roadmap/referred_by",
       "@type" : "@id"
+    },
+    "RegisteredGroup" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/RegisteredGroup"
     },
     "comment_voted_by" : {
       "@id" : "http://ontology.decidim.org/decidim_roadmap/comment_voted_by",

@@ -1,10 +1,9 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "base:Administrator" "base:OfficialAccount" "base:SectorialScope" "base:AccountabilityContainer" "base:Assembly" "base:Person" "http://ontology.decidim.org/decidim_roadmap/#Participant" "base:Blog_post" "base:ParticipationItem" "base:Blog" "base:Thread" "base:Promoter" "http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace" "base:ProposalIncubator" "base:Category" "base:ParticipationFunctionality" "base:VerifiedGroup" "base:Debate" "base:Attribute" "base:SearchEngine" "base:ProposalContainer" "base:Scope" "base:FirstLevelComment" "base:ParticipationPlatform" "base:Page" "base:ParticipativeBudget" "base:VerifiedPerson" "base:Result" "base:Amendment" "base:TerritorialScope" "base:BudgetedProject" "base:ParticipativeText" "base:Moderator" "base:Comment" "base:Collaborator" "base:VisitingParticipant" "base:ParticipationArtifact" "base:Survey" "base:Configurator" "base:Phase" "base:AuthoredItem" "base:NestedComment" "http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant" "base:Meeting" "base:Newsletter" "base:Organization" "base:Workshop" "base:Supporter" "base:ProcessGroup" "base:SovereignOrganization" "base:RegisteredPerson" "base:ManagedAccount" "base:Role" "base:Process" "http://ontology.decidim.org/decidim_roadmap/#Agent" "base:Initiative" "base:Consultation" "base:Container" "base:MeetingCalendar" "base:Project" "base:SysAdmin" "base:Group" "base:Proposal" "base:WorkingGroup" "base:Votation" "http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant" ; /*classes style*/
+node [shape = rectangle, color="black"]; "base:Administrator" "base:OfficialAccount" "base:SectorialScope" "base:AccountabilityContainer" "base:Assembly" "base:Person" "http://ontology.decidim.org/decidim_roadmap/#Participant" "base:Blog_post" "base:ParticipationItem" "base:Blog" "base:Thread" "base:Promoter" "http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace" "base:ProposalIncubator" "base:Category" "base:ParticipationFunctionality" "base:VerifiedGroup" "base:Debate" "base:Attribute" "base:SearchEngine" "base:ProposalContainer" "base:Scope" "base:FirstLevelComment" "base:ParticipationPlatform" "base:Page" "base:ParticipativeBudget" "base:VerifiedPerson" "base:Result" "base:Amendment" "base:RegisteredGroup" "base:TerritorialScope" "base:BudgetedProject" "base:ParticipativeText" "base:Moderator" "base:Comment" "base:Collaborator" "base:VisitingParticipant" "base:ParticipationArtifact" "base:Survey" "base:Configurator" "base:Phase" "base:AuthoredItem" "base:NestedComment" "http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant" "base:Meeting" "base:Newsletter" "base:Organization" "base:Workshop" "base:Supporter" "base:ProcessGroup" "base:SovereignOrganization" "base:RegisteredPerson" "base:ManagedAccount" "base:Role" "base:Process" "http://ontology.decidim.org/decidim_roadmap/#Agent" "base:Initiative" "base:Consultation" "base:Container" "base:MeetingCalendar" "base:Project" "base:SysAdmin" "base:Group" "base:Proposal" "base:WorkingGroup" "base:Votation" "http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant" ; /*classes style*/
 	"base:AuthoredItem" -> "base:ParticipationItem" [ label = "rdfs:subClassOf" ];
 	"base:RegisteredPerson" -> "http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant" [ label = "rdfs:subClassOf" ];
-	"base:RegisteredPerson" -> "base:Person" [ label = "rdfs:subClassOf" ];
 	"base:Category" -> "base:Attribute" [ label = "rdfs:subClassOf" ];
 	"base:Votation" -> "base:ParticipationFunctionality" [ label = "rdfs:subClassOf" ];
 	"base:Proposal" -> "base:AuthoredItem" [ label = "rdfs:subClassOf" ];
@@ -23,11 +22,10 @@ node [shape = rectangle, color="black"]; "base:Administrator" "base:OfficialAcco
 	"base:AccountabilityContainer" -> "base:Container" [ label = "rdfs:subClassOf" ];
 	"base:BudgetedProject" -> "base:AuthoredItem" [ label = "rdfs:subClassOf" ];
 	"base:VerifiedGroup" -> "http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant" [ label = "rdfs:subClassOf" ];
-	"base:VerifiedGroup" -> "base:Group" [ label = "rdfs:subClassOf" ];
+	"base:VerifiedGroup" -> "base:RegisteredGroup" [ label = "rdfs:subClassOf" ];
 	"base:Amendment" -> "base:Proposal" [ label = "rdfs:subClassOf" ];
 	"base:Survey" -> "base:ParticipationFunctionality" [ label = "rdfs:subClassOf" ];
 	"base:VerifiedPerson" -> "http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant" [ label = "rdfs:subClassOf" ];
-	"base:VerifiedPerson" -> "base:RegisteredPerson" [ label = "rdfs:subClassOf" ];
 	"base:ParticipationFunctionality" -> "base:ParticipationArtifact" [ label = "rdfs:subClassOf" ];
 	"base:Thread" -> "base:ParticipationItem" [ label = "rdfs:subClassOf" ];
 	"base:Phase" -> "base:ParticipationFunctionality" [ label = "rdfs:subClassOf" ];
@@ -36,7 +34,8 @@ node [shape = rectangle, color="black"]; "base:Administrator" "base:OfficialAcco
 	"base:Person" -> "http://ontology.decidim.org/decidim_roadmap/#Agent" [ label = "rdfs:subClassOf" ];
 	"base:Project" -> "base:ParticipationItem" [ label = "rdfs:subClassOf" ];
 	"base:ParticipativeText" -> "base:ProposalContainer" [ label = "rdfs:subClassOf" ];
-	"http://ontology.decidim.org/decidim_roadmap/#Participant" -> "http://ontology.decidim.org/decidim_roadmap/#Agent" [ label = "rdfs:subClassOf" ];
+	"base:RegisteredGroup" -> "http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant" [ label = "rdfs:subClassOf" ];
+	"http://ontology.decidim.org/decidim_roadmap/#Participant" -> "base:Role" [ label = "rdfs:subClassOf" ];
 	"base:Blog" -> "base:Container" [ label = "rdfs:subClassOf" ];
 	"base:VisitingParticipant" -> "http://ontology.decidim.org/decidim_roadmap/#Participant" [ label = "rdfs:subClassOf" ];
 	"base:ParticipationPlatform" -> "base:ParticipationArtifact" [ label = "rdfs:subClassOf" ];
@@ -55,7 +54,7 @@ node [shape = rectangle, color="black"]; "base:Administrator" "base:OfficialAcco
 	"base:Result" -> "base:ParticipationItem" [ label = "rdfs:subClassOf" ];
 	"base:Newsletter" -> "base:ParticipationFunctionality" [ label = "rdfs:subClassOf" ];
 	"http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace" -> "base:ParticipationArtifact" [ label = "rdfs:subClassOf" ];
-	"base:SovereignOrganization" -> "base:Organization" [ label = "rdfs:subClassOf" ];
+	"base:SovereignOrganization" -> "base:Role" [ label = "rdfs:subClassOf" ];
 	"base:Scope" -> "base:Attribute" [ label = "rdfs:subClassOf" ];
 	"base:Blog_post" -> "base:ParticipationItem" [ label = "rdfs:subClassOf" ];
 	"base:ProposalContainer" -> "base:Container" [ label = "rdfs:subClassOf" ];
@@ -67,7 +66,6 @@ node [shape = rectangle, color="black"]; "base:Administrator" "base:OfficialAcco
 	"base:Administrator" -> "base:Moderator" [ label = "rdfs:subClassOf" ];
 	"base:WorkingGroup" -> "base:ParticipationFunctionality" [ label = "rdfs:subClassOf" ];
 	"base:WorkingGroup" -> "base:Group" [ label = "rdfs:subClassOf" ];
-	"base:Group" -> "http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant" [ label = "rdfs:subClassOf" ];
 	"base:Group" -> "base:Organization" [ label = "rdfs:subClassOf" ];
 	"base:Workshop" -> "base:Container" [ label = "rdfs:subClassOf" ];
 	"base:SysAdmin" -> "base:Administrator" [ label = "rdfs:subClassOf" ];

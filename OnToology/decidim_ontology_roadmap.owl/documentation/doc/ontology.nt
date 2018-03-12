@@ -287,6 +287,14 @@
 <http://ontology.decidim.org/decidim_roadmap/has_moderator> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
 <http://ontology.decidim.org/decidim_roadmap/has_moderator> <http://www.w3.org/2000/01/rdf-schema#label> "has moderator"@en .
 # 
+# http://ontology.decidim.org/decidim_roadmap/has_participant
+<http://ontology.decidim.org/decidim_roadmap/has_participant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/has_participant> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/has_actor> .
+<http://ontology.decidim.org/decidim_roadmap/has_participant> <http://www.w3.org/2002/07/owl#inverseOf> <http://ontology.decidim.org/decidim_roadmap/participant_of> .
+<http://ontology.decidim.org/decidim_roadmap/has_participant> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/has_participant> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/#Agent> .
+<http://ontology.decidim.org/decidim_roadmap/has_participant> <http://www.w3.org/2000/01/rdf-schema#label> "has participant"@en .
+# 
 # http://ontology.decidim.org/decidim_roadmap/has_phase
 <http://ontology.decidim.org/decidim_roadmap/has_phase> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://ontology.decidim.org/decidim_roadmap/has_phase> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/includes> .
@@ -418,6 +426,13 @@
 <http://ontology.decidim.org/decidim_roadmap/moderator_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
 <http://ontology.decidim.org/decidim_roadmap/moderator_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
 <http://ontology.decidim.org/decidim_roadmap/moderator_of> <http://www.w3.org/2000/01/rdf-schema#label> "moderator of"@en .
+# 
+# http://ontology.decidim.org/decidim_roadmap/participant_of
+<http://ontology.decidim.org/decidim_roadmap/participant_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://ontology.decidim.org/decidim_roadmap/participant_of> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://ontology.decidim.org/decidim_roadmap/acts_on> .
+<http://ontology.decidim.org/decidim_roadmap/participant_of> <http://www.w3.org/2000/01/rdf-schema#domain> <http://ontology.decidim.org/decidim_roadmap/#Agent> .
+<http://ontology.decidim.org/decidim_roadmap/participant_of> <http://www.w3.org/2000/01/rdf-schema#range> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
+<http://ontology.decidim.org/decidim_roadmap/participant_of> <http://www.w3.org/2000/01/rdf-schema#label> "participant of"@en .
 # 
 # http://ontology.decidim.org/decidim_roadmap/phase_of
 <http://ontology.decidim.org/decidim_roadmap/phase_of> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -777,11 +792,11 @@ _:genid15 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidi
 # http://ontology.decidim.org/decidim_roadmap/Group
 <http://ontology.decidim.org/decidim_roadmap/Group> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ontology.decidim.org/decidim_roadmap/Group> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Organization> .
-<http://ontology.decidim.org/decidim_roadmap/Group> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
 <http://ontology.decidim.org/decidim_roadmap/Group> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
 _:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 _:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_member> .
 _:genid16 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/Group> <http://www.w3.org/2002/07/owl#disjointWith> <http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> .
 <http://ontology.decidim.org/decidim_roadmap/Group> <http://www.w3.org/2000/01/rdf-schema#comment> "A collective account corresponding to a group of registered participants."@en .
 <http://ontology.decidim.org/decidim_roadmap/Group> <http://www.w3.org/2000/01/rdf-schema#label> "Group"@en .
 # 
@@ -1011,9 +1026,13 @@ _:genid33 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidi
 <http://ontology.decidim.org/decidim_roadmap/ProposalIncubator> <http://www.w3.org/2000/01/rdf-schema#comment> "A ProposalIncubator allows RegistereParticipants to create Proposal drafts, and collaborate with each other in a preliminary phase before presenting proposals for gathering support to them.\n\nA ProposalIncubator is a Functionality of kind Container, that includes Items of kind \"Proposal\"."@en .
 <http://ontology.decidim.org/decidim_roadmap/ProposalIncubator> <http://www.w3.org/2000/01/rdf-schema#label> "Proposal incubator"@en .
 # 
+# http://ontology.decidim.org/decidim_roadmap/RegisteredGroup
+<http://ontology.decidim.org/decidim_roadmap/RegisteredGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/RegisteredGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
+<http://ontology.decidim.org/decidim_roadmap/RegisteredGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Registered group"@en .
+# 
 # http://ontology.decidim.org/decidim_roadmap/RegisteredPerson
 <http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Person> .
 <http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
 <http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "A RegisteredParticipant who is an individual Person, as opposed to collective accounts representing Organizations or Groups of participants."@en .
 <http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> <http://www.w3.org/2000/01/rdf-schema#label> "Registered person"@en .
@@ -1069,8 +1088,8 @@ _:genid37 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/d
 # 
 # http://ontology.decidim.org/decidim_roadmap/SovereignOrganization
 <http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Organization> .
-<http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "A SovereignOrganization is an Organization able to take decision and make them effective, that promotes a ParticipationPlatform or a ParticipationSpace to involve participants in collective decision making."@en .
+<http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Role> .
+<http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> <http://www.w3.org/2000/01/rdf-schema#comment> "A SovereignOrganization is the role that an Organization able to take decision and make them effective may assume, promoting a ParticipationPlatform or a ParticipationSpace to involve participants in collective decision making."@en .
 <http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> <http://www.w3.org/2000/01/rdf-schema#label> "Sovereign organization"@en .
 # 
 # http://ontology.decidim.org/decidim_roadmap/Supporter
@@ -1110,16 +1129,15 @@ _:genid38 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/d
 # 
 # http://ontology.decidim.org/decidim_roadmap/VerifiedGroup
 <http://ontology.decidim.org/decidim_roadmap/VerifiedGroup> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ontology.decidim.org/decidim_roadmap/VerifiedGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Group> .
+<http://ontology.decidim.org/decidim_roadmap/VerifiedGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/RegisteredGroup> .
 <http://ontology.decidim.org/decidim_roadmap/VerifiedGroup> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> .
 <http://ontology.decidim.org/decidim_roadmap/VerifiedGroup> <http://www.w3.org/2000/01/rdf-schema#comment> "A Group of Participants whose account has been verified to correspond to the Organization or collective entity it represents."@en .
 <http://ontology.decidim.org/decidim_roadmap/VerifiedGroup> <http://www.w3.org/2000/01/rdf-schema#label> "Verified group"@en .
 # 
 # http://ontology.decidim.org/decidim_roadmap/VerifiedPerson
 <http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> .
 <http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> .
-<http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "A RegisteredPerson whose identity has been verified to correspond to a citizen or Organization member with right to vote. Although the identity of a VerifiedParticipant has been verified, it is in general not disclosed; the OfficialAccount subclass represents VerifiedParticipants whose real (verified) identity is publicly disclosed.\n\nSome actions may only be performed by VerifiedPersons, such as supporting a Proposal." .
+<http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "A RegisteredParticipant whose identity has been verified to correspond to a citizen (or Organization member) with right to vote. Although the identity of a VerifiedParticipant has been verified, it is in general not disclosed; the OfficialAccount subclass represents VerifiedParticipants whose real (verified) identity is publicly disclosed.\n\nSome actions may only be performed by VerifiedPersons, such as supporting a Proposal." .
 <http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/2000/01/rdf-schema#label> "Verified person"@en .
 # 
 # http://ontology.decidim.org/decidim_roadmap/VisitingParticipant
@@ -1162,7 +1180,7 @@ _:genid40 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidi
 # 
 # http://ontology.decidim.org/decidim_roadmap/#Participant
 <http://ontology.decidim.org/decidim_roadmap/#Participant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://ontology.decidim.org/decidim_roadmap/#Participant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#Agent> .
+<http://ontology.decidim.org/decidim_roadmap/#Participant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/Role> .
 <http://ontology.decidim.org/decidim_roadmap/#Participant> <http://www.w3.org/2000/01/rdf-schema#comment> "General class that includes any individual or collective entity participating in a participation space"@en .
 <http://ontology.decidim.org/decidim_roadmap/#Participant> <http://www.w3.org/2000/01/rdf-schema#label> "Participant"@en .
 # 
