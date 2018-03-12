@@ -1,0 +1,431 @@
+{
+  "@context" : {
+    "RegisteredParticipant" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant"
+    },
+    "creator_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/creator_of",
+      "@type" : "@id"
+    },
+    "has_role" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_role",
+      "@type" : "@id"
+    },
+    "supported_by" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/supported_by",
+      "@type" : "@id"
+    },
+    "reported_by" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/reported_by",
+      "@type" : "@id"
+    },
+    "has_scope" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_scope",
+      "@type" : "@id"
+    },
+    "withdrawn_by" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/withdrawn_by",
+      "@type" : "@id"
+    },
+    "includes" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/includes",
+      "@type" : "@id"
+    },
+    "Moderator" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Moderator"
+    },
+    "VisitingParticipant" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/VisitingParticipant"
+    },
+    "belong_to" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/belong_to",
+      "@type" : "@id"
+    },
+    "Comment" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Comment"
+    },
+    "mentions" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/mentions",
+      "@type" : "@id"
+    },
+    "Thread" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Thread"
+    },
+    "SectorialScope" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/SectorialScope"
+    },
+    "Organization" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Organization"
+    },
+    "Category" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Category"
+    },
+    "VerifiedGroup" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/VerifiedGroup"
+    },
+    "has_promoter" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_promoter",
+      "@type" : "@id"
+    },
+    "references" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/references",
+      "@type" : "@id"
+    },
+    "role_scope_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/role_scope_of",
+      "@type" : "@id"
+    },
+    "Administrator" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Administrator"
+    },
+    "ParticipationArtifact" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact"
+    },
+    "functionality_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/functionality_of",
+      "@type" : "@id"
+    },
+    "Newsletter" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Newsletter"
+    },
+    "derives_from" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/derives_from",
+      "@type" : "@id"
+    },
+    "NestedComment" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/NestedComment"
+    },
+    "endorser_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/endorser_of",
+      "@type" : "@id"
+    },
+    "has_result" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_result",
+      "@type" : "@id"
+    },
+    "has_reply" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_reply",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "reports" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/reports",
+      "@type" : "@id"
+    },
+    "votes_comment" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/votes_comment",
+      "@type" : "@id"
+    },
+    "Configurator" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Configurator"
+    },
+    "BudgetedProject" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/BudgetedProject"
+    },
+    "FirstLevelComment" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/FirstLevelComment"
+    },
+    "ProcessGroup" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/ProcessGroup"
+    },
+    "has_configurator" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_configurator",
+      "@type" : "@id"
+    },
+    "Result" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Result"
+    },
+    "followed_by" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/followed_by",
+      "@type" : "@id"
+    },
+    "mentioned_by" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/mentioned_by",
+      "@type" : "@id"
+    },
+    "ParticipativeBudget" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/ParticipativeBudget"
+    },
+    "Person" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Person"
+    },
+    "Attribute" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Attribute"
+    },
+    "derives" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/derives",
+      "@type" : "@id"
+    },
+    "Participant" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/#Participant"
+    },
+    "Agent" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/#Agent"
+    },
+    "attendee_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/attendee_of",
+      "@type" : "@id"
+    },
+    "has_attendee" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_attendee",
+      "@type" : "@id"
+    },
+    "Role" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Role"
+    },
+    "has_functionality" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_functionality",
+      "@type" : "@id"
+    },
+    "Proposal" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Proposal"
+    },
+    "configurator_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/configurator_of",
+      "@type" : "@id"
+    },
+    "ParticipationSpace" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace"
+    },
+    "has_creator" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_creator",
+      "@type" : "@id"
+    },
+    "VerifiedParticipant" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant"
+    },
+    "follower_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/follower_of",
+      "@type" : "@id"
+    },
+    "VerifiedPerson" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/VerifiedPerson"
+    },
+    "has_first_comment" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_first_comment",
+      "@type" : "@id"
+    },
+    "Container" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Container"
+    },
+    "Survey" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Survey"
+    },
+    "Promoter" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Promoter"
+    },
+    "Phase" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Phase"
+    },
+    "has_phase" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_phase",
+      "@type" : "@id"
+    },
+    "Page" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Page"
+    },
+    "SovereignOrganization" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/SovereignOrganization"
+    },
+    "Blog_post" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Blog_post"
+    },
+    "has_platform" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_platform",
+      "@type" : "@id"
+    },
+    "administrator_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/administrator_of",
+      "@type" : "@id"
+    },
+    "scope_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/scope_of",
+      "@type" : "@id"
+    },
+    "endorsed_by" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/endorsed_by",
+      "@type" : "@id"
+    },
+    "related_to" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/related_to",
+      "@type" : "@id"
+    },
+    "Debate" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Debate"
+    },
+    "collaborator_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/collaborator_of",
+      "@type" : "@id"
+    },
+    "grants" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/grants",
+      "@type" : "@id"
+    },
+    "Project" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Project"
+    },
+    "platform_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/platform_of",
+      "@type" : "@id"
+    },
+    "referenced_by" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/referenced_by",
+      "@type" : "@id"
+    },
+    "Supporter" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Supporter"
+    },
+    "RegisteredPerson" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/RegisteredPerson"
+    },
+    "Meeting" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Meeting"
+    },
+    "moderator_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/moderator_of",
+      "@type" : "@id"
+    },
+    "specified_by" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/specified_by",
+      "@type" : "@id"
+    },
+    "Votation" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Votation"
+    },
+    "AccountabilityContainer" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/AccountabilityContainer"
+    },
+    "supporter_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/supporter_of",
+      "@type" : "@id"
+    },
+    "ParticipationItem" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/ParticipationItem"
+    },
+    "role_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/role_of",
+      "@type" : "@id"
+    },
+    "Process" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Process"
+    },
+    "reply_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/reply_of",
+      "@type" : "@id"
+    },
+    "acts_on" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/acts_on",
+      "@type" : "@id"
+    },
+    "container_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/container_of",
+      "@type" : "@id"
+    },
+    "refers_to" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/refers_to",
+      "@type" : "@id"
+    },
+    "phase_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/phase_of",
+      "@type" : "@id"
+    },
+    "referred_by" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/referred_by",
+      "@type" : "@id"
+    },
+    "comment_voted_by" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/comment_voted_by",
+      "@type" : "@id"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "has_role_scope" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_role_scope",
+      "@type" : "@id"
+    },
+    "Group" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Group"
+    },
+    "has_moderator" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_moderator",
+      "@type" : "@id"
+    },
+    "ParticipationFunctionality" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality"
+    },
+    "result_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/result_of",
+      "@type" : "@id"
+    },
+    "has_container" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_container",
+      "@type" : "@id"
+    },
+    "MeetingCalendar" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/MeetingCalendar"
+    },
+    "has_collaborator" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_collaborator",
+      "@type" : "@id"
+    },
+    "has_administrator" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_administrator",
+      "@type" : "@id"
+    },
+    "ProposalContainer" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/ProposalContainer"
+    },
+    "TerritorialScope" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/TerritorialScope"
+    },
+    "ParticipationPlatform" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform"
+    },
+    "Collaborator" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Collaborator"
+    },
+    "first_comment_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/first_comment_of",
+      "@type" : "@id"
+    },
+    "AuthoredItem" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/AuthoredItem"
+    },
+    "SysAdmin" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/SysAdmin"
+    },
+    "has_category" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_category",
+      "@type" : "@id"
+    },
+    "Scope" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/Scope"
+    },
+    "granted_by" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/granted_by",
+      "@type" : "@id"
+    },
+    "specifies" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/specifies",
+      "@type" : "@id"
+    },
+    "category_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/category_of",
+      "@type" : "@id"
+    },
+    "has_actor" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/has_actor",
+      "@type" : "@id"
+    },
+    "ManagedAccount" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/ManagedAccount"
+    },
+    "promoter_of" : {
+      "@id" : "http://ontology.decidim.org/decidim_roadmap/promoter_of",
+      "@type" : "@id"
+    }
+  }
+}
