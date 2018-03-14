@@ -1135,7 +1135,7 @@ An Assembly may have WorkingGroups, i.e. subgroups created to work on specific i
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">This class represents Items that have an author. While some content in the Platform and ParticipationSpaces is created by the Adinistrators, AuthoredItems have a creator that can typically be any RegisteredParticipant.</rdfs:comment>
-        <rdfs:label xml:lang="en">Authored item</rdfs:label>
+        <rdfs:label xml:lang="en">Authored resource</rdfs:label>
     </owl:Class>
     
 
@@ -1552,7 +1552,7 @@ Furthermore, a ParticipationFunctionality needs to have a Configurator that allo
 Some functionalitites represent one single element that is added to the ParticipationSpace, such as a Page, a Votation or a Survey, while other functionalities are elements that contain participationItems, such as Proposals, BudgetedProposals, Meetings or Comments; such functionalitties that contain ParticipationItems are defined as ParticipationContainers.
 
 While some functionalities are general and can belong to any kind of ParticipationSpace, such as a Page, a Blog or a Debate, other are specific to a certain kind of participationSpace. E.g., a WorkingGroup can only belong to an Assembly. In the latter case, the range of the property functionality_of for that particular ParticipationFunctionality is restrictetd to the kind of space it can belong to.</rdfs:comment>
-        <rdfs:label xml:lang="en">Participation functionality</rdfs:label>
+        <rdfs:label xml:lang="en">Participation component</rdfs:label>
     </owl:Class>
     
 
@@ -1565,7 +1565,7 @@ While some functionalities are general and can belong to any kind of Participati
         <rdfs:comment xml:lang="en">This general class represents all individual items within a participation space such as Proposals, Comments, meetings, Blog posts.
 
 Items are typically contained in some ParticipationContainer associated with a ParticipationSpace, and different kinds of Items are typically contained in different kinds of containers. For example, Bog posts in Blogs, Proposals in ProposalContainers, Meetings in Workshops or MeetingCalendars, and so on.</rdfs:comment>
-        <rdfs:label xml:lang="en">Participation item</rdfs:label>
+        <rdfs:label xml:lang="en">Resource</rdfs:label>
     </owl:Class>
     
 
