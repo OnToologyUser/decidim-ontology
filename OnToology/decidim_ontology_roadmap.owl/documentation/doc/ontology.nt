@@ -667,7 +667,7 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 _:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_creator> .
 _:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> .
 <http://ontology.decidim.org/decidim_roadmap/AuthoredItem> <http://www.w3.org/2000/01/rdf-schema#comment> "This class represents Items that have an author. While some content in the Platform and ParticipationSpaces is created by the Adinistrators, AuthoredItems have a creator that can typically be any RegisteredParticipant."@en .
-<http://ontology.decidim.org/decidim_roadmap/AuthoredItem> <http://www.w3.org/2000/01/rdf-schema#label> "Authored item"@en .
+<http://ontology.decidim.org/decidim_roadmap/AuthoredItem> <http://www.w3.org/2000/01/rdf-schema#label> "Authored resource"@en .
 # 
 # http://ontology.decidim.org/decidim_roadmap/Blog
 <http://ontology.decidim.org/decidim_roadmap/Blog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -902,13 +902,13 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 _:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_configurator> .
 _:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Configurator> .
 <http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> <http://www.w3.org/2000/01/rdf-schema#comment> "This class includes the different functionalitites that can be added to a ParticipationSpace by RegisteredParticipants having administrative role to configure it. \n\nEach ParticipationFunctionality has to be linked to at least one participationSpace it belongs to, through the property functionality_of.\nFurthermore, a ParticipationFunctionality needs to have a Configurator that allows its configuration by participants having the permissions to do so.\n\nSome functionalitites represent one single element that is added to the ParticipationSpace, such as a Page, a Votation or a Survey, while other functionalities are elements that contain participationItems, such as Proposals, BudgetedProposals, Meetings or Comments; such functionalitties that contain ParticipationItems are defined as ParticipationContainers.\n\nWhile some functionalities are general and can belong to any kind of ParticipationSpace, such as a Page, a Blog or a Debate, other are specific to a certain kind of participationSpace. E.g., a WorkingGroup can only belong to an Assembly. In the latter case, the range of the property functionality_of for that particular ParticipationFunctionality is restrictetd to the kind of space it can belong to."@en .
-<http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> <http://www.w3.org/2000/01/rdf-schema#label> "Participation functionality"@en .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> <http://www.w3.org/2000/01/rdf-schema#label> "Participation component"@en .
 # 
 # http://ontology.decidim.org/decidim_roadmap/ParticipationItem
 <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> .
 <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> <http://www.w3.org/2000/01/rdf-schema#comment> "This general class represents all individual items within a participation space such as Proposals, Comments, meetings, Blog posts.\n\nItems are typically contained in some ParticipationContainer associated with a ParticipationSpace, and different kinds of Items are typically contained in different kinds of containers. For example, Bog posts in Blogs, Proposals in ProposalContainers, Meetings in Workshops or MeetingCalendars, and so on."@en .
-<http://ontology.decidim.org/decidim_roadmap/ParticipationItem> <http://www.w3.org/2000/01/rdf-schema#label> "Participation item"@en .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationItem> <http://www.w3.org/2000/01/rdf-schema#label> "Resource"@en .
 # 
 # http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform
 <http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
