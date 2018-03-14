@@ -51,7 +51,7 @@ node [shape = rectangle, color="orange"]; "base:SectorialScope" "base:Accountabi
 	"base:supporter_of" -> "base:acts_on" [ label = "rdfs:subPropertyOf" ];
 	"base:role_scope_of" -> "base:specifies" [ label = "rdfs:subPropertyOf" ];
 	"base:configurator_of" -> "base:belong_to" [ label = "rdfs:subPropertyOf" ];
-	"NULL" -> "base:amendment_of" [ label = "owl:onProperty" ];
+	"NULL" -> "base:Process" [ label = "owl:onClass" ];
 	"NULL" -> "base:Proposal" [ label = "owl:onClass" ];
 	"NULL" -> "base:ParticipationPlatform" [ label = "owl:onClass" ];
 	"NULL" -> "base:initiative_of" [ label = "owl:onProperty" ];
@@ -97,7 +97,7 @@ node [shape = rectangle, color="orange"]; "base:SectorialScope" "base:Accountabi
 	"NULL" -> "http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace" [ label = "owl:someValuesFrom" ];
 	"NULL" -> "base:configurator_of" [ label = "owl:onProperty" ];
 	"NULL" -> "base:SectorialScope" [ label = "owl:someValuesFrom" ];
-	"NULL" -> "base:Process" [ label = "owl:onClass" ];
+	"NULL" -> "base:amendment_of" [ label = "owl:onProperty" ];
 	"NULL" -> "base:has_scope" [ label = "owl:onProperty" ];
 	"base:result_of" -> "base:refers_to" [ label = "rdfs:subPropertyOf" ];
 	"base:scope_of" -> "base:specifies" [ label = "rdfs:subPropertyOf" ];

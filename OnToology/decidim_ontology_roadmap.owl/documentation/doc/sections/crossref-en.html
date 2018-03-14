@@ -20,6 +20,10 @@ This section provides details for each class and property defined by Decidim Ont
             title="http://ontology.decidim.org/decidim_roadmap/Amendment">Amendment</a>
       </li>
       <li>
+         <a href="#ParticipationArtifact"
+            title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
+      </li>
+      <li>
          <a href="#Assembly"
             title="http://ontology.decidim.org/decidim_roadmap/Assembly">Assembly</a>
       </li>
@@ -54,6 +58,10 @@ This section provides details for each class and property defined by Decidim Ont
       <li>
          <a href="#Comment"
             title="http://ontology.decidim.org/decidim_roadmap/Comment">Comment</a>
+      </li>
+      <li>
+         <a href="#ParticipationFunctionality"
+            title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Component</a>
       </li>
       <li>
          <a href="#Configurator"
@@ -120,24 +128,8 @@ This section provides details for each class and property defined by Decidim Ont
             title="http://ontology.decidim.org/decidim_roadmap/#Participant">Participant</a>
       </li>
       <li>
-         <a href="#ParticipationArtifact"
-            title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
-      </li>
-      <li>
-         <a href="#ParticipationFunctionality"
-            title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Participation component</a>
-      </li>
-      <li>
          <a href="#Container"
             title="http://ontology.decidim.org/decidim_roadmap/Container">Participation container</a>
-      </li>
-      <li>
-         <a href="#ParticipationPlatform"
-            title="http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform">Participation platform</a>
-      </li>
-      <li>
-         <a href="#ParticipationSpace"
-            title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
       </li>
       <li>
          <a href="#ParticipativeBudget"
@@ -154,6 +146,10 @@ This section provides details for each class and property defined by Decidim Ont
       <li>
          <a href="#Phase"
             title="http://ontology.decidim.org/decidim_roadmap/Phase">Phase</a>
+      </li>
+      <li>
+         <a href="#ParticipationPlatform"
+            title="http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform">Platform</a>
       </li>
       <li>
          <a href="#Process"
@@ -222,6 +218,10 @@ This section provides details for each class and property defined by Decidim Ont
       <li>
          <a href="#SovereignOrganization"
             title="http://ontology.decidim.org/decidim_roadmap/SovereignOrganization">Sovereign organization</a>
+      </li>
+      <li>
+         <a href="#ParticipationSpace"
+            title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
       </li>
       <li>
          <a href="#Supporter"
@@ -403,6 +403,63 @@ It is a ParticipationFunctionality of kind Container, and includes Items of kind
          </dd>
       </dl>
    </div>
+   <div class="entity" id="ParticipationArtifact">
+      <h3>Artifact<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact</p>
+      <div class="comment">
+         <span class="markdown">General class including the various elements that allow democratic participation in Decidim: ParticipationPlatforms, ParticipationSpaces (such as Participation processes or Assemblies), ParticipationFunctionalities (such as Debates, Surveys or Votations), and ParticipationItems (such as individual proposals, meetings or comments).</span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#ParticipationFunctionality"
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Component</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Configurator"
+               title="http://ontology.decidim.org/decidim_roadmap/Configurator">Configurator</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ParticipationPlatform"
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform">Platform</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ParticipationItem"
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationItem">Resource</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ParticipationSpace"
+               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#has_administrator"
+               title="http://ontology.decidim.org/decidim_roadmap/has_administrator">has administrator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_collaborator"
+               title="http://ontology.decidim.org/decidim_roadmap/has_collaborator">has collaborator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_configurator"
+               title="http://ontology.decidim.org/decidim_roadmap/has_configurator">has configurator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_moderator"
+               title="http://ontology.decidim.org/decidim_roadmap/has_moderator">has moderator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_participant"
+               title="http://ontology.decidim.org/decidim_roadmap/has_participant">has participant</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#role_scope_of"
+               title="http://ontology.decidim.org/decidim_roadmap/role_scope_of">role scope of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#administrator_of"
+               title="http://ontology.decidim.org/decidim_roadmap/administrator_of">administrator of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#configurator_of"
+               title="http://ontology.decidim.org/decidim_roadmap/configurator_of">configurator of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_role_scope"
+               title="http://ontology.decidim.org/decidim_roadmap/has_role_scope">has role scope</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#moderator_of"
+               title="http://ontology.decidim.org/decidim_roadmap/moderator_of">moderator of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#participant_of"
+               title="http://ontology.decidim.org/decidim_roadmap/participant_of">participant of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Assembly">
       <h3>Assembly<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -424,7 +481,7 @@ An Assembly may have WorkingGroups, i.e. subgroups created to work on specific i
          </dd>
          <dd>
             <a href="#ParticipationSpace"
-               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
+               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
@@ -741,6 +798,78 @@ A Comment can be referred to another comment (NestedComment) or to some other Pa
          </dd>
       </dl>
    </div>
+   <div class="entity" id="ParticipationFunctionality">
+      <h3>Component<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality</p>
+      <div class="comment">
+         <span class="markdown">This class includes the different functionalitites that can be added to a ParticipationSpace by RegisteredParticipants having administrative role to configure it. 
+
+Each ParticipationFunctionality has to be linked to at least one participationSpace it belongs to, through the property functionality_of.
+Furthermore, a ParticipationFunctionality needs to have a Configurator that allows its configuration by participants having the permissions to do so.
+
+Some functionalitites represent one single element that is added to the ParticipationSpace, such as a Page, a Votation or a Survey, while other functionalities are elements that contain participationItems, such as Proposals, BudgetedProposals, Meetings or Comments; such functionalitties that contain ParticipationItems are defined as ParticipationContainers.
+
+While some functionalities are general and can belong to any kind of ParticipationSpace, such as a Page, a Blog or a Debate, other are specific to a certain kind of participationSpace. E.g., a WorkingGroup can only belong to an Assembly. In the latter case, the range of the property functionality_of for that particular ParticipationFunctionality is restrictetd to the kind of space it can belong to.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ParticipationArtifact"
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#functionality_of"
+               title="http://ontology.decidim.org/decidim_roadmap/functionality_of">functionality of</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#ParticipationSpace"
+               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#has_configurator"
+               title="http://ontology.decidim.org/decidim_roadmap/has_configurator">has configurator</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#Configurator"
+               title="http://ontology.decidim.org/decidim_roadmap/Configurator">Configurator</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Newsletter"
+               title="http://ontology.decidim.org/decidim_roadmap/Newsletter">Newsletter</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Page"
+               title="http://ontology.decidim.org/decidim_roadmap/Page">Page</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Container"
+               title="http://ontology.decidim.org/decidim_roadmap/Container">Participation container</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Phase"
+               title="http://ontology.decidim.org/decidim_roadmap/Phase">Phase</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#SearchEngine"
+               title="http://ontology.decidim.org/decidim_roadmap/SearchEngine">Search engine</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Survey"
+               title="http://ontology.decidim.org/decidim_roadmap/Survey">Survey</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Votation"
+               title="http://ontology.decidim.org/decidim_roadmap/Votation">Votation</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#WorkingGroup"
+               title="http://ontology.decidim.org/decidim_roadmap/WorkingGroup">Working group</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#functionality_of"
+               title="http://ontology.decidim.org/decidim_roadmap/functionality_of">functionality of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_functionality"
+               title="http://ontology.decidim.org/decidim_roadmap/has_functionality">has functionality</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Configurator">
       <h3>Configurator<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -756,7 +885,7 @@ A Configurator is linked to the ParticipationArtifacts it allows to configure th
          <dt>has super-classes</dt>
          <dd>
             <a href="#ParticipationArtifact"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
@@ -764,7 +893,7 @@ A Configurator is linked to the ParticipationArtifacts it allows to configure th
                title="http://ontology.decidim.org/decidim_roadmap/configurator_of">configurator of</a>
             <sup class="type-op" title="object property">op</sup> 
             <span class="logic">exactly</span> 1 <a href="#ParticipationArtifact"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -795,7 +924,7 @@ A Configurator is linked to the ParticipationArtifacts it allows to configure th
          <dt>has super-classes</dt>
          <dd>
             <a href="#ParticipationSpace"
-               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
+               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
@@ -979,7 +1108,7 @@ An Initiative is always connected to a Proposal it promotes, with the goal of ga
          <dt>has super-classes</dt>
          <dd>
             <a href="#ParticipationSpace"
-               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
+               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
@@ -1190,7 +1319,7 @@ Like a Workshop, it is a ParticipationFunctionality of kind Container, that incl
          <dt>has super-classes</dt>
          <dd>
             <a href="#ParticipationFunctionality"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Participation component</a>
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Component</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1259,7 +1388,7 @@ Like a Workshop, it is a ParticipationFunctionality of kind Container, that incl
          <dt>has super-classes</dt>
          <dd>
             <a href="#ParticipationFunctionality"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Participation component</a>
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Component</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -1291,135 +1420,6 @@ Like a Workshop, it is a ParticipationFunctionality of kind Container, that incl
          </dd>
       </dl>
    </div>
-   <div class="entity" id="ParticipationArtifact">
-      <h3>Participation artifact<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact</p>
-      <div class="comment">
-         <span class="markdown">General class including the various elements that allow democratic participation in Decidim: ParticipationPlatforms, ParticipationSpaces (such as Participation processes or Assemblies), ParticipationFunctionalities (such as Debates, Surveys or Votations), and ParticipationItems (such as individual proposals, meetings or comments).</span>
-      </div>
-      <dl class="description">
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Configurator"
-               title="http://ontology.decidim.org/decidim_roadmap/Configurator">Configurator</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ParticipationFunctionality"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Participation component</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ParticipationPlatform"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform">Participation platform</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ParticipationSpace"
-               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ParticipationItem"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationItem">Resource</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#has_administrator"
-               title="http://ontology.decidim.org/decidim_roadmap/has_administrator">has administrator</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#has_collaborator"
-               title="http://ontology.decidim.org/decidim_roadmap/has_collaborator">has collaborator</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#has_configurator"
-               title="http://ontology.decidim.org/decidim_roadmap/has_configurator">has configurator</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#has_moderator"
-               title="http://ontology.decidim.org/decidim_roadmap/has_moderator">has moderator</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#has_participant"
-               title="http://ontology.decidim.org/decidim_roadmap/has_participant">has participant</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#role_scope_of"
-               title="http://ontology.decidim.org/decidim_roadmap/role_scope_of">role scope of</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#administrator_of"
-               title="http://ontology.decidim.org/decidim_roadmap/administrator_of">administrator of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#configurator_of"
-               title="http://ontology.decidim.org/decidim_roadmap/configurator_of">configurator of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#has_role_scope"
-               title="http://ontology.decidim.org/decidim_roadmap/has_role_scope">has role scope</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#moderator_of"
-               title="http://ontology.decidim.org/decidim_roadmap/moderator_of">moderator of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#participant_of"
-               title="http://ontology.decidim.org/decidim_roadmap/participant_of">participant of</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="ParticipationFunctionality">
-      <h3>Participation component<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality</p>
-      <div class="comment">
-         <span class="markdown">This class includes the different functionalitites that can be added to a ParticipationSpace by RegisteredParticipants having administrative role to configure it. 
-
-Each ParticipationFunctionality has to be linked to at least one participationSpace it belongs to, through the property functionality_of.
-Furthermore, a ParticipationFunctionality needs to have a Configurator that allows its configuration by participants having the permissions to do so.
-
-Some functionalitites represent one single element that is added to the ParticipationSpace, such as a Page, a Votation or a Survey, while other functionalities are elements that contain participationItems, such as Proposals, BudgetedProposals, Meetings or Comments; such functionalitties that contain ParticipationItems are defined as ParticipationContainers.
-
-While some functionalities are general and can belong to any kind of ParticipationSpace, such as a Page, a Blog or a Debate, other are specific to a certain kind of participationSpace. E.g., a WorkingGroup can only belong to an Assembly. In the latter case, the range of the property functionality_of for that particular ParticipationFunctionality is restrictetd to the kind of space it can belong to.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#ParticipationArtifact"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dd>
-            <a href="#functionality_of"
-               title="http://ontology.decidim.org/decidim_roadmap/functionality_of">functionality of</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">some</span> 
-            <a href="#ParticipationSpace"
-               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dd>
-            <a href="#has_configurator"
-               title="http://ontology.decidim.org/decidim_roadmap/has_configurator">has configurator</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">some</span> 
-            <a href="#Configurator"
-               title="http://ontology.decidim.org/decidim_roadmap/Configurator">Configurator</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Newsletter"
-               title="http://ontology.decidim.org/decidim_roadmap/Newsletter">Newsletter</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Page"
-               title="http://ontology.decidim.org/decidim_roadmap/Page">Page</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Container"
-               title="http://ontology.decidim.org/decidim_roadmap/Container">Participation container</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Phase"
-               title="http://ontology.decidim.org/decidim_roadmap/Phase">Phase</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#SearchEngine"
-               title="http://ontology.decidim.org/decidim_roadmap/SearchEngine">Search engine</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Survey"
-               title="http://ontology.decidim.org/decidim_roadmap/Survey">Survey</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Votation"
-               title="http://ontology.decidim.org/decidim_roadmap/Votation">Votation</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#WorkingGroup"
-               title="http://ontology.decidim.org/decidim_roadmap/WorkingGroup">Working group</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#functionality_of"
-               title="http://ontology.decidim.org/decidim_roadmap/functionality_of">functionality of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#has_functionality"
-               title="http://ontology.decidim.org/decidim_roadmap/has_functionality">has functionality</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
    <div class="entity" id="Container">
       <h3>Participation container<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -1436,7 +1436,7 @@ Different kinds of ParticipationContainers contain different kinds of Participat
          <dt>has super-classes</dt>
          <dd>
             <a href="#ParticipationFunctionality"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Participation component</a>
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Component</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
@@ -1469,153 +1469,6 @@ Different kinds of ParticipationContainers contain different kinds of Participat
          <dd>
             <a href="#has_container"
                title="http://ontology.decidim.org/decidim_roadmap/has_container">has container</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="ParticipationPlatform">
-      <h3>Participation platform<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform</p>
-      <div class="comment">
-         <span class="markdown">This class represent instances of a participation platform. 
-
-It can include different kinds of ParticipationSpaces, such as Assemblies, Processes, Consultations or Initiatives; all ParticipationArtifacts ultimately relate to some platform.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#ParticipationArtifact"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dd>
-            <a href="#has_promoter"
-               title="http://ontology.decidim.org/decidim_roadmap/has_promoter">has promoter</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">some</span> 
-            <a href="#SovereignOrganization"
-               title="http://ontology.decidim.org/decidim_roadmap/SovereignOrganization">Sovereign organization</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#platform_of"
-               title="http://ontology.decidim.org/decidim_roadmap/platform_of">platform of</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#has_platform"
-               title="http://ontology.decidim.org/decidim_roadmap/has_platform">has platform</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="ParticipationSpace">
-      <h3>Participation space<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace</p>
-      <div class="comment">
-         <span class="markdown">ParticipationSpaces are the frameworks in which participation takes place. They represent the channels to which the citizens or the members of an organization can articulate collective needs and proposals, and take decisions.
-
-There are different kinds of spaces: Processes, Initiatives, Assemblies, Consultations. Additionally, ProcessGroups are spaces that include and group together more than one Process.
-
-A ParticipationSpace is vinculated to an Agent that promotes it, usually a SovereignOrganization that aims to involve its members or the citizenry in a collective decision making effort. 
-
-A ParticipationSpace is specified by a TerritorialScope and a SectorialScope that delimit its scope.
-
-A ParticipationSpace has some Configurator that allows its configuration and management by RegisteredParticipants having an administrative role that grants them permissions over the ParticipationSpace.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd>
-            <a href="#ParticipationArtifact"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dd>
-            <a href="#has_configurator"
-               title="http://ontology.decidim.org/decidim_roadmap/has_configurator">has configurator</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">some</span> 
-            <a href="#Configurator"
-               title="http://ontology.decidim.org/decidim_roadmap/Configurator">Configurator</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dd>
-            <a href="#has_promoter"
-               title="http://ontology.decidim.org/decidim_roadmap/has_promoter">has promoter</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">some</span> 
-            <a href="#Agent"
-               title="http://ontology.decidim.org/decidim_roadmap/#Agent">Agent</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dd>
-            <a href="#has_scope"
-               title="http://ontology.decidim.org/decidim_roadmap/has_scope">has scope</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">some</span> 
-            <a href="#SectorialScope"
-               title="http://ontology.decidim.org/decidim_roadmap/SectorialScope">Sectorial scope</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dd>
-            <a href="#has_scope"
-               title="http://ontology.decidim.org/decidim_roadmap/has_scope">has scope</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">some</span> 
-            <a href="#TerritorialScope"
-               title="http://ontology.decidim.org/decidim_roadmap/TerritorialScope">Territorial scope</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dd>
-            <a href="#has_platform"
-               title="http://ontology.decidim.org/decidim_roadmap/has_platform">has platform</a>
-            <sup class="type-op" title="object property">op</sup> 
-            <span class="logic">exactly</span> 1 <a href="#ParticipationPlatform"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform">Participation platform</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Assembly"
-               title="http://ontology.decidim.org/decidim_roadmap/Assembly">Assembly</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Consultation"
-               title="http://ontology.decidim.org/decidim_roadmap/Consultation">Consultation</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Initiative"
-               title="http://ontology.decidim.org/decidim_roadmap/Initiative">Initiative</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Process"
-               title="http://ontology.decidim.org/decidim_roadmap/Process">Process</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#ProcessGroup"
-               title="http://ontology.decidim.org/decidim_roadmap/ProcessGroup">Process group</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#functionality_of"
-               title="http://ontology.decidim.org/decidim_roadmap/functionality_of">functionality of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#has_functionality"
-               title="http://ontology.decidim.org/decidim_roadmap/has_functionality">has functionality</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#has_platform"
-               title="http://ontology.decidim.org/decidim_roadmap/has_platform">has platform</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#has_promoter"
-               title="http://ontology.decidim.org/decidim_roadmap/has_promoter">has promoter</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#platform_of"
-               title="http://ontology.decidim.org/decidim_roadmap/platform_of">platform of</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#promoter_of"
-               title="http://ontology.decidim.org/decidim_roadmap/promoter_of">promoter of</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1712,7 +1565,7 @@ A ParticipativeText is a Functionality of kind Container, that includes Items of
          <dt>has super-classes</dt>
          <dd>
             <a href="#ParticipationFunctionality"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Participation component</a>
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Component</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
@@ -1737,6 +1590,48 @@ A ParticipativeText is a Functionality of kind Container, that includes Items of
          </dd>
       </dl>
    </div>
+   <div class="entity" id="ParticipationPlatform">
+      <h3>Platform<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform</p>
+      <div class="comment">
+         <span class="markdown">This class represent instances of a participation platform. 
+
+It can include different kinds of ParticipationSpaces, such as Assemblies, Processes, Consultations or Initiatives; all ParticipationArtifacts ultimately relate to some platform.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ParticipationArtifact"
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#has_promoter"
+               title="http://ontology.decidim.org/decidim_roadmap/has_promoter">has promoter</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#SovereignOrganization"
+               title="http://ontology.decidim.org/decidim_roadmap/SovereignOrganization">Sovereign organization</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#platform_of"
+               title="http://ontology.decidim.org/decidim_roadmap/platform_of">platform of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#has_platform"
+               title="http://ontology.decidim.org/decidim_roadmap/has_platform">has platform</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Process">
       <h3>Process<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -1753,7 +1648,7 @@ A Process is promoted by a SovereignOrganization and can contain in different ph
          <dt>has super-classes</dt>
          <dd>
             <a href="#ParticipationSpace"
-               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
+               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
@@ -1805,7 +1700,7 @@ A Process is promoted by a SovereignOrganization and can contain in different ph
          <dt>has super-classes</dt>
          <dd>
             <a href="#ParticipationSpace"
-               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
+               title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
@@ -2157,6 +2052,12 @@ A ProposalIncubator is a Functionality of kind Container, that includes Items of
                title="http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant">Registered participant</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#VerifiedPerson"
+               title="http://ontology.decidim.org/decidim_roadmap/VerifiedPerson">Verified person</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>is in domain of</dt>
          <dd>
             <a href="#attendee_of"
@@ -2195,7 +2096,7 @@ Items are typically contained in some ParticipationContainer associated with a P
          <dt>has super-classes</dt>
          <dd>
             <a href="#ParticipationArtifact"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
@@ -2343,7 +2244,7 @@ Each Result is associated to one or more accepted Proposals, and to one or more 
             <sup class="type-op" title="object property">op</sup> 
             <span class="logic">some</span> 
             <a href="#ParticipationArtifact"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
@@ -2429,7 +2330,7 @@ Each Result is associated to one or more accepted Proposals, and to one or more 
          <dt>has super-classes</dt>
          <dd>
             <a href="#ParticipationFunctionality"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Participation component</a>
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Component</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
@@ -2437,7 +2338,7 @@ Each Result is associated to one or more accepted Proposals, and to one or more 
                title="http://ontology.decidim.org/decidim_roadmap/belong_to">belongs to</a>
             <sup class="type-op" title="object property">op</sup> 
             <span class="logic">exactly</span> 1 <a href="#ParticipationPlatform"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform">Participation platform</a>
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform">Platform</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -2486,6 +2387,111 @@ Each Result is associated to one or more accepted Proposals, and to one or more 
          </dd>
       </dl>
    </div>
+   <div class="entity" id="ParticipationSpace">
+      <h3>Space<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace</p>
+      <div class="comment">
+         <span class="markdown">ParticipationSpaces are the frameworks in which participation takes place. They represent the channels to which the citizens or the members of an organization can articulate collective needs and proposals, and take decisions.
+
+There are different kinds of spaces: Processes, Initiatives, Assemblies, Consultations. Additionally, ProcessGroups are spaces that include and group together more than one Process.
+
+A ParticipationSpace is vinculated to an Agent that promotes it, usually a SovereignOrganization that aims to involve its members or the citizenry in a collective decision making effort. 
+
+A ParticipationSpace is specified by a TerritorialScope and a SectorialScope that delimit its scope.
+
+A ParticipationSpace has some Configurator that allows its configuration and management by RegisteredParticipants having an administrative role that grants them permissions over the ParticipationSpace.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#ParticipationArtifact"
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#has_configurator"
+               title="http://ontology.decidim.org/decidim_roadmap/has_configurator">has configurator</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#Configurator"
+               title="http://ontology.decidim.org/decidim_roadmap/Configurator">Configurator</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#has_promoter"
+               title="http://ontology.decidim.org/decidim_roadmap/has_promoter">has promoter</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#Agent"
+               title="http://ontology.decidim.org/decidim_roadmap/#Agent">Agent</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#has_scope"
+               title="http://ontology.decidim.org/decidim_roadmap/has_scope">has scope</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#SectorialScope"
+               title="http://ontology.decidim.org/decidim_roadmap/SectorialScope">Sectorial scope</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#has_scope"
+               title="http://ontology.decidim.org/decidim_roadmap/has_scope">has scope</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">some</span> 
+            <a href="#TerritorialScope"
+               title="http://ontology.decidim.org/decidim_roadmap/TerritorialScope">Territorial scope</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#has_platform"
+               title="http://ontology.decidim.org/decidim_roadmap/has_platform">has platform</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <span class="logic">exactly</span> 1 <a href="#ParticipationPlatform"
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform">Platform</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Assembly"
+               title="http://ontology.decidim.org/decidim_roadmap/Assembly">Assembly</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Consultation"
+               title="http://ontology.decidim.org/decidim_roadmap/Consultation">Consultation</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Initiative"
+               title="http://ontology.decidim.org/decidim_roadmap/Initiative">Initiative</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Process"
+               title="http://ontology.decidim.org/decidim_roadmap/Process">Process</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#ProcessGroup"
+               title="http://ontology.decidim.org/decidim_roadmap/ProcessGroup">Process group</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#functionality_of"
+               title="http://ontology.decidim.org/decidim_roadmap/functionality_of">functionality of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_functionality"
+               title="http://ontology.decidim.org/decidim_roadmap/has_functionality">has functionality</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_platform"
+               title="http://ontology.decidim.org/decidim_roadmap/has_platform">has platform</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#has_promoter"
+               title="http://ontology.decidim.org/decidim_roadmap/has_promoter">has promoter</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#platform_of"
+               title="http://ontology.decidim.org/decidim_roadmap/platform_of">platform of</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#promoter_of"
+               title="http://ontology.decidim.org/decidim_roadmap/promoter_of">promoter of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Supporter">
       <h3>Supporter<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -2519,7 +2525,7 @@ Each Result is associated to one or more accepted Proposals, and to one or more 
          <dt>has super-classes</dt>
          <dd>
             <a href="#ParticipationFunctionality"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Participation component</a>
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Component</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -2685,6 +2691,11 @@ Some actions may only be performed by VerifiedPersons, such as supporting a Prop
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
+            <a href="#RegisteredPerson"
+               title="http://ontology.decidim.org/decidim_roadmap/RegisteredPerson">Registered person</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
             <a href="#VerifiedParticipant"
                title="http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant">Verified participant</a>
             <sup class="type-c" title="class">c</sup>
@@ -2742,7 +2753,7 @@ Different votation systems are possible and can be configured by the Administrat
          <dt>has super-classes</dt>
          <dd>
             <a href="#ParticipationFunctionality"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Participation component</a>
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Component</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -2766,7 +2777,7 @@ Different votation systems are possible and can be configured by the Administrat
          </dd>
          <dd>
             <a href="#ParticipationFunctionality"
-               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Participation component</a>
+               title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Component</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dd>
@@ -3215,7 +3226,7 @@ Inverse property of has_actor and it has domain Agent.</span>
             <dt>has range</dt>
             <dd>
                <a href="#ParticipationArtifact"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -3482,7 +3493,7 @@ It is inverse property of property includes.</span>
             <dt>has range</dt>
             <dd>
                <a href="#ParticipationArtifact"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -3778,13 +3789,13 @@ Each ParticipationSpace can include more instances of the same kind of functiona
             <dt>has domain</dt>
             <dd>
                <a href="#ParticipationSpace"
-                  title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="#ParticipationFunctionality"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Participation component</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Component</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -3947,7 +3958,7 @@ It is inverse property of acts_on, and it has range Agent.</span>
             <dt>has domain</dt>
             <dd>
                <a href="#ParticipationArtifact"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -4093,7 +4104,7 @@ It is inverse property of acts_on, and it has range Agent.</span>
             <dt>has domain</dt>
             <dd>
                <a href="#ParticipationArtifact"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -4131,7 +4142,7 @@ It is inverse property of acts_on, and it has range Agent.</span>
             <dt>has domain</dt>
             <dd>
                <a href="#ParticipationArtifact"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -4357,13 +4368,13 @@ It is inverse property of acts_on, and it has range Agent.</span>
             <dt>has domain</dt>
             <dd>
                <a href="#ParticipationSpace"
-                  title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="#ParticipationFunctionality"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Participation component</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality">Component</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -4467,7 +4478,7 @@ It is inverse property of acts_on, and it has range Agent.</span>
             <dt>has domain</dt>
             <dd>
                <a href="#ParticipationArtifact"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -4503,7 +4514,7 @@ It is inverse property of acts_on, and it has range Agent.</span>
             <dt>has domain</dt>
             <dd>
                <a href="#ParticipationArtifact"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -4577,13 +4588,13 @@ It is inverse property of acts_on, and it has range Agent.</span>
             <dt>has domain</dt>
             <dd>
                <a href="#ParticipationSpace"
-                  title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="#ParticipationPlatform"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform">Participation platform</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform">Platform</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -4613,7 +4624,7 @@ It is inverse property of acts_on, and it has range Agent.</span>
             <dt>has domain</dt>
             <dd>
                <a href="#ParticipationSpace"
-                  title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -4768,7 +4779,7 @@ It is inverse property of acts_on, and it has range Agent.</span>
             <dt>has range</dt>
             <dd>
                <a href="#ParticipationArtifact"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -5129,7 +5140,7 @@ It is inverse property of belongs_to.</span>
             <dt>has range</dt>
             <dd>
                <a href="#ParticipationArtifact"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -5165,7 +5176,7 @@ It is inverse property of belongs_to.</span>
             <dt>has range</dt>
             <dd>
                <a href="#ParticipationArtifact"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -5233,13 +5244,13 @@ It is inverse property of belongs_to.</span>
             <dt>has domain</dt>
             <dd>
                <a href="#ParticipationPlatform"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform">Participation platform</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform">Platform</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="#ParticipationSpace"
-                  title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -5278,7 +5289,7 @@ It is inverse property of belongs_to.</span>
             <dt>has range</dt>
             <dd>
                <a href="#ParticipationSpace"
-                  title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Participation space</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace">Space</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -5678,7 +5689,7 @@ It is inverse property of referred_by.</span>
             <dt>has domain</dt>
             <dd>
                <a href="#ParticipationArtifact"
-                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Participation artifact</a>
+                  title="http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact">Artifact</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>

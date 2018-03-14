@@ -888,7 +888,7 @@ _:genid21 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/d
 # http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact
 <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> <http://www.w3.org/2000/01/rdf-schema#comment> "General class including the various elements that allow democratic participation in Decidim: ParticipationPlatforms, ParticipationSpaces (such as Participation processes or Assemblies), ParticipationFunctionalities (such as Debates, Surveys or Votations), and ParticipationItems (such as individual proposals, meetings or comments)."@en .
-<http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Participation artifact"@en .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact> <http://www.w3.org/2000/01/rdf-schema#label> "Artifact"@en .
 # 
 # http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality
 <http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -902,7 +902,7 @@ _:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 _:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_configurator> .
 _:genid23 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/Configurator> .
 <http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> <http://www.w3.org/2000/01/rdf-schema#comment> "This class includes the different functionalitites that can be added to a ParticipationSpace by RegisteredParticipants having administrative role to configure it. \n\nEach ParticipationFunctionality has to be linked to at least one participationSpace it belongs to, through the property functionality_of.\nFurthermore, a ParticipationFunctionality needs to have a Configurator that allows its configuration by participants having the permissions to do so.\n\nSome functionalitites represent one single element that is added to the ParticipationSpace, such as a Page, a Votation or a Survey, while other functionalities are elements that contain participationItems, such as Proposals, BudgetedProposals, Meetings or Comments; such functionalitties that contain ParticipationItems are defined as ParticipationContainers.\n\nWhile some functionalities are general and can belong to any kind of ParticipationSpace, such as a Page, a Blog or a Debate, other are specific to a certain kind of participationSpace. E.g., a WorkingGroup can only belong to an Assembly. In the latter case, the range of the property functionality_of for that particular ParticipationFunctionality is restrictetd to the kind of space it can belong to."@en .
-<http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> <http://www.w3.org/2000/01/rdf-schema#label> "Participation component"@en .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality> <http://www.w3.org/2000/01/rdf-schema#label> "Component"@en .
 # 
 # http://ontology.decidim.org/decidim_roadmap/ParticipationItem
 <http://ontology.decidim.org/decidim_roadmap/ParticipationItem> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -918,7 +918,7 @@ _:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 _:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.org/decidim_roadmap/has_promoter> .
 _:genid24 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://ontology.decidim.org/decidim_roadmap/SovereignOrganization> .
 <http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> <http://www.w3.org/2000/01/rdf-schema#comment> "This class represent instances of a participation platform. \n\nIt can include different kinds of ParticipationSpaces, such as Assemblies, Processes, Consultations or Initiatives; all ParticipationArtifacts ultimately relate to some platform."@en .
-<http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> <http://www.w3.org/2000/01/rdf-schema#label> "Participation platform"@en .
+<http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> <http://www.w3.org/2000/01/rdf-schema#label> "Platform"@en .
 # 
 # http://ontology.decidim.org/decidim_roadmap/ParticipativeBudget
 <http://ontology.decidim.org/decidim_roadmap/ParticipativeBudget> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -1136,6 +1136,7 @@ _:genid38 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/d
 # 
 # http://ontology.decidim.org/decidim_roadmap/VerifiedPerson
 <http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/RegisteredPerson> .
 <http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> .
 <http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/2000/01/rdf-schema#comment> "A RegisteredParticipant whose identity has been verified to correspond to a citizen (or Organization member) with right to vote. Although the identity of a VerifiedParticipant has been verified, it is in general not disclosed; the OfficialAccount subclass represents VerifiedParticipants whose real (verified) identity is publicly disclosed.\n\nSome actions may only be performed by VerifiedPersons, such as supporting a Proposal." .
 <http://ontology.decidim.org/decidim_roadmap/VerifiedPerson> <http://www.w3.org/2000/01/rdf-schema#label> "Verified person"@en .
@@ -1209,7 +1210,7 @@ _:genid45 <http://www.w3.org/2002/07/owl#onProperty> <http://ontology.decidim.or
 _:genid45 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
 _:genid45 <http://www.w3.org/2002/07/owl#onClass> <http://ontology.decidim.org/decidim_roadmap/ParticipationPlatform> .
 <http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> <http://www.w3.org/2000/01/rdf-schema#comment> "ParticipationSpaces are the frameworks in which participation takes place. They represent the channels to which the citizens or the members of an organization can articulate collective needs and proposals, and take decisions.\n\nThere are different kinds of spaces: Processes, Initiatives, Assemblies, Consultations. Additionally, ProcessGroups are spaces that include and group together more than one Process.\n\nA ParticipationSpace is vinculated to an Agent that promotes it, usually a SovereignOrganization that aims to involve its members or the citizenry in a collective decision making effort. \n\nA ParticipationSpace is specified by a TerritorialScope and a SectorialScope that delimit its scope.\n\nA ParticipationSpace has some Configurator that allows its configuration and management by RegisteredParticipants having an administrative role that grants them permissions over the ParticipationSpace."@en .
-<http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> <http://www.w3.org/2000/01/rdf-schema#label> "Participation space"@en .
+<http://ontology.decidim.org/decidim_roadmap/#ParticipationSpace> <http://www.w3.org/2000/01/rdf-schema#label> "Space"@en .
 # 
 # http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant
 <http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

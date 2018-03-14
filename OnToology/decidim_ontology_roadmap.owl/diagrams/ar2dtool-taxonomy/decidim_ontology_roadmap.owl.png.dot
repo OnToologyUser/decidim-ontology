@@ -26,6 +26,7 @@ node [shape = rectangle, color="black"]; "base:Administrator" "base:OfficialAcco
 	"base:Amendment" -> "base:Proposal" [ label = "rdfs:subClassOf" ];
 	"base:Survey" -> "base:ParticipationFunctionality" [ label = "rdfs:subClassOf" ];
 	"base:VerifiedPerson" -> "http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant" [ label = "rdfs:subClassOf" ];
+	"base:VerifiedPerson" -> "base:RegisteredPerson" [ label = "rdfs:subClassOf" ];
 	"base:ParticipationFunctionality" -> "base:ParticipationArtifact" [ label = "rdfs:subClassOf" ];
 	"base:Thread" -> "base:ParticipationItem" [ label = "rdfs:subClassOf" ];
 	"base:Phase" -> "base:ParticipationFunctionality" [ label = "rdfs:subClassOf" ];

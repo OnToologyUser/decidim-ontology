@@ -1035,7 +1035,7 @@ Like a Workshop, it is a ParticipationFunctionality of kind Container, that incl
 ###  http://ontology.decidim.org/decidim_roadmap/ParticipationArtifact
 :ParticipationArtifact rdf:type owl:Class ;
                        rdfs:comment "General class including the various elements that allow democratic participation in Decidim: ParticipationPlatforms, ParticipationSpaces (such as Participation processes or Assemblies), ParticipationFunctionalities (such as Debates, Surveys or Votations), and ParticipationItems (such as individual proposals, meetings or comments)."@en ;
-                       rdfs:label "Participation artifact"@en .
+                       rdfs:label "Artifact"@en .
 
 
 ###  http://ontology.decidim.org/decidim_roadmap/ParticipationFunctionality
@@ -1057,7 +1057,7 @@ Furthermore, a ParticipationFunctionality needs to have a Configurator that allo
 Some functionalitites represent one single element that is added to the ParticipationSpace, such as a Page, a Votation or a Survey, while other functionalities are elements that contain participationItems, such as Proposals, BudgetedProposals, Meetings or Comments; such functionalitties that contain ParticipationItems are defined as ParticipationContainers.
 
 While some functionalities are general and can belong to any kind of ParticipationSpace, such as a Page, a Blog or a Debate, other are specific to a certain kind of participationSpace. E.g., a WorkingGroup can only belong to an Assembly. In the latter case, the range of the property functionality_of for that particular ParticipationFunctionality is restrictetd to the kind of space it can belong to."""@en ;
-                            rdfs:label "Participation component"@en .
+                            rdfs:label "Component"@en .
 
 
 ###  http://ontology.decidim.org/decidim_roadmap/ParticipationItem
@@ -1079,7 +1079,7 @@ Items are typically contained in some ParticipationContainer associated with a P
                        rdfs:comment """This class represent instances of a participation platform. 
 
 It can include different kinds of ParticipationSpaces, such as Assemblies, Processes, Consultations or Initiatives; all ParticipationArtifacts ultimately relate to some platform."""@en ;
-                       rdfs:label "Participation platform"@en .
+                       rdfs:label "Platform"@en .
 
 
 ###  http://ontology.decidim.org/decidim_roadmap/ParticipativeBudget
@@ -1341,7 +1341,8 @@ Each Result is associated to one or more accepted Proposals, and to one or more 
 
 ###  http://ontology.decidim.org/decidim_roadmap/VerifiedPerson
 :VerifiedPerson rdf:type owl:Class ;
-                rdfs:subClassOf <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> ;
+                rdfs:subClassOf :RegisteredPerson ,
+                                <http://ontology.decidim.org/decidim_roadmap/#VerifiedParticipant> ;
                 rdfs:comment """A RegisteredParticipant whose identity has been verified to correspond to a citizen (or Organization member) with right to vote. Although the identity of a VerifiedParticipant has been verified, it is in general not disclosed; the OfficialAccount subclass represents VerifiedParticipants whose real (verified) identity is publicly disclosed.
 
 Some actions may only be performed by VerifiedPersons, such as supporting a Proposal."""^^xsd:string ;
@@ -1437,7 +1438,7 @@ A ParticipationSpace is vinculated to an Agent that promotes it, usually a Sover
 A ParticipationSpace is specified by a TerritorialScope and a SectorialScope that delimit its scope.
 
 A ParticipationSpace has some Configurator that allows its configuration and management by RegisteredParticipants having an administrative role that grants them permissions over the ParticipationSpace."""@en ;
-                                                                  rdfs:label "Participation space"@en .
+                                                                  rdfs:label "Space"@en .
 
 
 ###  http://ontology.decidim.org/decidim_roadmap/#RegisteredParticipant
